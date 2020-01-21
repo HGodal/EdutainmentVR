@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-/Users/Haavard/Desktop/hei.apk
+/Users/kjetilsvihus/Skole/grabtest.apk
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
@@ -64,7 +64,6 @@ b2c49db11310c73f73ac8c392fbc5715 Assembly-CSharp.dll:OVR.SoundEmitter
 cd6d03f9fdf66c9c022a09e86769b638 Zinnia.Runtime.dll:Zinnia.Event.Proxy.EmptyEventProxyEmitter
 ac10e5fe3455baf14336675170ed0bae Assembly-CSharp.dll:.BoundsLockedObject
 0e2ce2f22060571614715dafd3643e22 Zinnia.Runtime.dll:Zinnia.Tracking.Collision.CollisionNotifier
-16d5e140866ed95c10b6322388cce4c3 Assembly-CSharp.dll:OculusIntegrationForVRTK.Tracking.Velocity.OVRAnchorVelocityEstimator
 32c2e26363d3830b3fcd6735b46fef68 Assembly-CSharp.dll:OculusSampleFramework.TrainButtonVisualController
 bfff67bff4bd5310b0b005cbb863c92c Zinnia.Runtime.dll:Zinnia.Rule.AnyTagRule
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -103,13 +102,10 @@ b3bb7c40cede9849e7814d6093dcfcea Oculus.VR.dll:.OVRRaycaster
 d3c76b14a25eebd3a3323dd43297919c Unity.TextMeshPro.dll:TMPro.TMP_InputField
 7ffa5a0944fe3f23d99ec567ae7ae898 Assembly-CSharp.dll:.CharacterCameraConstraint
 968a3280ef04a84624071bcc8428573d VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Locomotion.BodyRepresentation.BodyRepresentationFacade
-153e79ec9e185d0c5f25d07650bdac99 VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.CameraRig.UnityXRCameraRig.Input.UnityAxis1DAction
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:OculusSampleFramework.PauseOnInputLoss
 b1299c30ced5950d3d7d5d51dcac728e VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Helpers.Tooltip.TooltipConfigurator
 07bbff34ca5d14ed9bffb0376c5ede5f Assembly-CSharp.dll:.GuardianBoundaryEnforcer
 36ae7cc3e989c6df9341b63a0b042603 Assembly-CSharp.dll:Oculus.Platform.Samples.VrBoardGame.BoardPosition
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 79a120ea0a9fbd921a0720613ce23598 VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Interactions.InteractableSnapZone.SnapZoneConfigurator
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -149,6 +145,7 @@ a9ca0909b260232af152a6062939015d Zinnia.Runtime.dll:Zinnia.Data.Type.Transformat
 f9654ab2b14c99684549e5ea6fd4992e Zinnia.Runtime.dll:Zinnia.Tracking.Modification.ComponentEnabledStateModifier
 c51d2a1569bb404a12e837742887b609 Oculus.VR.dll:.OVRPlayerController
 7e394d578dea8ffa781cf49e6f9214b9 Zinnia.Runtime.dll:Zinnia.Process.Moment.MomentProcess
+d8622afc05071e0dea886754d6cedb8e Assembly-CSharp.dll:.OVRInputAxis1DAction
 492922e88cd5d8eec833ea3313940e47 Zinnia.Runtime.dll:Zinnia.Data.Collection.GameObjectRelations
 d14b5caca3610ffe26ad6cd89c3b1a34 VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Helpers.AxisRotator.AxisRotatorConfigurator
 558b301491aa906446760eed78a170c5 Oculus.VR.dll:.OVRAudioSourceTest
