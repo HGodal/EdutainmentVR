@@ -204,3 +204,6 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+
+#Other
+UnityVR/Library/CrashedAssetImports.txt
