@@ -14,7 +14,7 @@
     </activity>
     <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="false" />
     <meta-data android:name="com.samsung.android.vr.application.mode" android:value="vr_only" />
-    <meta-data android:name="unity.build-id" android:value="ef6c71f4-2784-4b1f-bd20-bb36b551011f" />
+    <meta-data android:name="unity.build-id" android:value="acee861d-47f3-4be7-a36e-e9c3122fd4a5" />
     <meta-data android:name="unity.splash-mode" android:value="0" />
     <meta-data android:name="unity.splash-enable" android:value="False" />
   </application>

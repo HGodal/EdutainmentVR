@@ -424,6 +424,7 @@ ff7457f736b7a8c348d3498f09b3d520 Assembly-CSharp.dll:.ONSPAmbisonicsNative
 9e59cb55c85142a96a08808523bf3eb0 VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Interactions.Interactors.InteractorFacadeEventProxyEmitter
 a4ab9532686dbd13bc2c5bb58a3781ce Assembly-CSharp.dll:.MouseLook
 4c063458ca029e84d4f59c22fc3c5fca Assembly-CSharp.dll:.TeleportTargetHandlerNode
+16d5e140866ed95c10b6322388cce4c3 Assembly-CSharp.dll:OculusIntegrationForVRTK.Tracking.Velocity.OVRAnchorVelocityEstimator
 b4f33769b4be9dc6ee0546bbfc960cbb Assembly-CSharp.dll:.OVRLipSyncContext
 6aefcb69e398b783525b31c9fd3e99b1 Assembly-CSharp.dll:OculusSampleFramework.ButtonTriggerZone
 363c649aa7deda919f9b2d0c729efa20 Zinnia.Runtime.dll:Zinnia.Data.Operation.Extraction.TransformPositionExtractor
@@ -435,6 +436,7 @@ ddb88151c19644f8893fc50abf00c917 Assembly-CSharp.dll:.OvrAvatar
 e1300922cc039f41ab46a47f4cb05898 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 a4b88f3b08f1f148e04c6c3d7544c9ec Oculus.VR.dll:.OVRChromaticAberration
 3a0fa4528690e89614a27f9b88a889c4 Oculus.VR.dll:.OVRSceneSampleController
+599f82bbf34e47f5155315777b5ac8ea Assembly-CSharp.dll:.OVRInputTouchAction
 76d6b62dc8f2b03086e6851bc8aea0d8 Zinnia.Runtime.dll:Zinnia.Tracking.Modification.TransformPropertyApplier
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:Oculus.Platform.Samples.VrHoops.PlatformManager
 6a5d8463a2263d3170e343a6dc5332aa Zinnia.Runtime.dll:Zinnia.Data.Collection.List.SerializableTypeBehaviourObservableList
@@ -469,6 +471,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 c98b75f66fb089f264cea22a0a30c448 Zinnia.Runtime.dll:Zinnia.Data.Type.Transformation.Vector3Restrictor
 a6ded2673e2fb033edf3bf8af9c7c7dc Assembly-CSharp.dll:.OvrAvatarMaterialManager
 0004e6414b5a10aa71d861498c105797 Zinnia.Runtime.dll:Zinnia.Utility.CountdownTimer
+eaa2263782246c52c55509e297c8904c Assembly-CSharp.dll:.OVRInputButtonAction
 7e73277238ee8c04d76a601e04d9ae7f VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Interactions.Interactors.InteractorFacade
 a2fe3324c62d6e3b2308e2685afbb0f5 Oculus.VR.dll:.OVRMeshRenderer
 1776a012a5fa9aaa82fea9037413bbec VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Helpers.Tooltip.TooltipFacade
@@ -590,3 +593,4 @@ cd06391f9225499fb9ea605ab668b015 Assembly-CSharp.dll:Oculus.Platform.Samples.VrH
 9805f7a3e230af997c3df7e82956abe0 VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Interactions.Interactables.Grab.Action.GrabInteractableScaleAction
 71bb6a6b6c8f052f948db64c7dd3ca4f VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Interactions.Interactors.ComponentTags.StopTouchingTag
 18235af34262c9d1c806370a73196694 Assembly-CSharp.dll:OculusSampleFramework.ButtonController
+c92ba38efbacd62ac18032508ca36e45 Assembly-CSharp.dll:.PauseMenuLogic
