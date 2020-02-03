@@ -232,5 +232,30 @@ namespace OVRTouchSample
                 }
             }
         }
+
+        public void TriggerEnable(bool enabled)
+        {
+
+            if (enabled)
+            {
+
+                for (int i = 0; i < m_colliders.Length; ++i)
+                {
+                    Collider collider = m_colliders[i];
+
+                    collider.isTrigger = true;
+                }
+            }
+            else
+            {
+
+                for (int i = 0; i < m_colliders.Length; ++i)
+                {
+                    Collider collider = m_colliders[i];
+                    collider.isTrigger = false;
+
+                }
+            }
+        }
     }
 }
