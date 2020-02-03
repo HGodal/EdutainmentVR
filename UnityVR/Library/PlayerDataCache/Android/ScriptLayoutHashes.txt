@@ -41,6 +41,7 @@ fb6fbda121d17c03aa85a449ce8e4f22 Assembly-CSharp.dll:.OculusSpatializerUnity
 e4c511fcf31a39b6e614595be7309046 Assembly-CSharp.dll:.LipSyncDemo_Control
 eab5bd3b00133e5da9183176b8ee43ac Oculus.VR.dll:.OVRGazePointer
 ee064a1c4ba1f660af1c5b892fd2512c Assembly-CSharp.dll:.PlayerController
+c92ba38efbacd62ac18032508ca36e45 Assembly-CSharp.dll:.PauseMenuLogic
 73ed85a03410cb810b1ef4eca77b0d6f Assembly-CSharp.dll:OculusSampleFramework.Hand
 9a83bd141a7bf939e9ab01da7f0be8ce Zinnia.Runtime.dll:Zinnia.Data.Type.Transformation.Conversion.FloatToVector2
 0031596f60c026f182dcc976632358c0 Zinnia.Runtime.dll:Zinnia.Data.Type.Transformation.FloatRangeValueRemapper
@@ -106,6 +107,8 @@ d3c76b14a25eebd3a3323dd43297919c Unity.TextMeshPro.dll:TMPro.TMP_InputField
 b1299c30ced5950d3d7d5d51dcac728e VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Helpers.Tooltip.TooltipConfigurator
 07bbff34ca5d14ed9bffb0376c5ede5f Assembly-CSharp.dll:.GuardianBoundaryEnforcer
 36ae7cc3e989c6df9341b63a0b042603 Assembly-CSharp.dll:Oculus.Platform.Samples.VrBoardGame.BoardPosition
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 79a120ea0a9fbd921a0720613ce23598 VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Interactions.InteractableSnapZone.SnapZoneConfigurator
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -593,4 +596,3 @@ cd06391f9225499fb9ea605ab668b015 Assembly-CSharp.dll:Oculus.Platform.Samples.VrH
 9805f7a3e230af997c3df7e82956abe0 VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Interactions.Interactables.Grab.Action.GrabInteractableScaleAction
 71bb6a6b6c8f052f948db64c7dd3ca4f VRTK.Prefabs.Runtime.dll:VRTK.Prefabs.Interactions.Interactors.ComponentTags.StopTouchingTag
 18235af34262c9d1c806370a73196694 Assembly-CSharp.dll:OculusSampleFramework.ButtonController
-c92ba38efbacd62ac18032508ca36e45 Assembly-CSharp.dll:.PauseMenuLogic
