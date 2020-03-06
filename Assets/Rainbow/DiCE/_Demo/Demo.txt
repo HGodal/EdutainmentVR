@@ -1,0 +1,6 @@
+This demo is intended to show the most basic DiCE setup. Skyboxes are not stereoscopic and so 
+suck for VR, please do not judge DiCE based on this. 
+
+Use 'T' to toggle DiCE on/off, then 'E'  to switch which curve is used for which eye, 
+'Up' & 'Down' to toggle the DiCE intensity level (lowest is default), and 'R' & 'F' to 
+fade DiCE in or out.
