@@ -14,6 +14,7 @@ TagManager:
   - RightPipe
   - LeftPipe
   - StraightPipe
+  - Hammer
   layers:
   - Default
   - TransparentFX
@@ -35,7 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - WallBreak
   - 
   - 
   - 
