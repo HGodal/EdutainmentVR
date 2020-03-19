@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 
 public static class StaticData
 {
-    public static int[] levelScores = new int[3];
+    public static int[] levelScores = new int[6];
     private static int totalScore;
 
     public static int getScore()
