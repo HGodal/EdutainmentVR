@@ -52,12 +52,6 @@ public class CheckObjects : MonoBehaviour
         counterGUI.text = text;
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Valid") {
-            WriteCounter((counter+=5).ToString());
-        }
-    }
-
     public void checkValid() 
     {
         Correct = GetComponent<AudioSource>();
@@ -89,10 +83,7 @@ public class CheckObjects : MonoBehaviour
     {
         counterGUI.text = counter.ToString();
         if (counter >= endScore) {
-            WriteInfo("Gratulerer du vant spillet! \n\n du blir teleportert tilbake til menyen om 5 sekunder");
-            countDownTimer.isPaused = true;
-            StaticData.levelScores[0] = Mathf.FloorToInt(countDownTimer.getTimer());
-            logic.WaitChangeScene(5.0f, "Menu");
+            WriteInfo("Gratulerer du satt sammen riktig, du kan nå skru på ventilasjonen");
         }
     }
     }

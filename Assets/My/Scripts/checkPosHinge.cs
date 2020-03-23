@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class changePosHinge : MonoBehaviour
+public class checkPosHinge : MonoBehaviour
 {
 
     private GameObject hinge;
@@ -20,12 +20,13 @@ public class changePosHinge : MonoBehaviour
     // }
 
     private void OnTriggerEnter(Collider other) {
-        
     
         hinge = GameObject.Find("/VentA");
         Vector3 test = new Vector3(-1.6f, 2.28f, -2.7f);
         hinge.transform.position = test;
          
     }
+
+   
 
 }

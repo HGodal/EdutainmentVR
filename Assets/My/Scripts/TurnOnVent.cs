@@ -10,8 +10,21 @@ public class TurnOnVent : MonoBehaviour
     private GameObject close;
     TextMeshProUGUI counterGUI;
     AudioSource Ventilation;
+    CountDown countDownTimer;
+    CommonLogic logic;
+    TextMeshProUGUI infoGUI;
+
+    private void Start() {
+        countDownTimer = GameObject.Find("ButtonVent/Button1/Front/CountDown").GetComponent<CountDown>();
+        logic = GameObject.Find("Logic").GetComponent<CommonLogic>();
+        infoGUI = GameObject.Find("/InfoCanvas/InfoText").GetComponent<TextMeshProUGUI>();
+    }
+    
+    public void WriteInfo(string text)
+    {
+        infoGUI.text = text;
+    }
    
-    // Start is called before the first frame update
     private void OnTriggerEnter(Collider other) {
 
         Ventilation = GetComponent<AudioSource>();
@@ -28,6 +41,10 @@ public class TurnOnVent : MonoBehaviour
             if(Vent1.transform.position == test1) {
                 if(hinge.transform.position == test) {
                     Ventilation.Play();
+                    WriteInfo("Gratulerer du vant spillet! \n\n du blir teleportert tilbake til menyen om 8 sekunder");
+                    countDownTimer.isPaused = true;
+                    StaticData.levelScores[0] = Mathf.FloorToInt(countDownTimer.getTimer());
+                    logic.WaitChangeScene(8.0f, "Menu");
                     
                 }
             }
