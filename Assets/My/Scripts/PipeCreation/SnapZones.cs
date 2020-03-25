@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using VRTK.Prefabs.Interactions.InteractableSnapZone;
+using TMPro;
 
 public class SnapZones : MonoBehaviour
 {
+    public TextMeshProUGUI text;
+
     private CommonLogic logic;
 
     private AudioSource pling;
@@ -37,7 +40,6 @@ public class SnapZones : MonoBehaviour
     int direction = 0;
     int zDirection = 1;
     int yDirection = 1;
-    int counter = 0;
 
     private void UpdateDirection(int retning)
     {
@@ -67,7 +69,6 @@ public class SnapZones : MonoBehaviour
         yDirection = 1;
         while (pipeGrid[zDirection, yDirection] != 0)
         {
-            Debug.Log(pipeGrid[zDirection, yDirection] + " for " + zDirection + " og " + yDirection);
             switch (pipeGrid[zDirection, yDirection])
             {
                 case 0:
@@ -82,6 +83,7 @@ public class SnapZones : MonoBehaviour
                     direction++;
                     break;
                 default:
+                    pling.Play();
                     Debug.Log("Traff Mål!");
                     return true;
             }
@@ -153,7 +155,6 @@ public class SnapZones : MonoBehaviour
                 pipeList.Add(pipe);
             }
         }
-        //DeactivateSnapzones();
     }
 
     private bool checkIfNextAvailable(int type)
@@ -232,18 +233,22 @@ public class SnapZones : MonoBehaviour
             createPipe(downPipe, "DownPipe");
         }
 
+        Debug.Log("Nå har templist størrelsen: " + tempList.Count());
+
         if (goalSpotted < tempList.Count)
         {
-            for (int i = 0; i < tempList.Count; i++)
+            Debug.Log("Goal spotted");
+            for (int i = tempList.Count - 1; i >= 0; i--)
             {
                 if (i != goalSpotted)
                 {
                     Destroy(tempList.ElementAt(i));
+                    tempList.RemoveAt(i);
                 }
             }
+            Debug.Log("TempList inni goalspotted antall ting:" + tempList.Count());
         }
 
-        CheckRoute();
         if (CheckRoute())
         {
             GameFinish();
@@ -309,24 +314,22 @@ public class SnapZones : MonoBehaviour
         pling = GetComponent<AudioSource>();
         createAllSnapZones();
 
-        // downTurn();
-        // upTurn();
-        // straightTurn();
-        // straightTurn();
-        // straightTurn();
-        // upTurn();
-        // downTurn();
-        // straightTurn();
-        // straightTurn();
-        // straightTurn();
+        straightTurn();
+        straightTurn();
+        straightTurn();
+        straightTurn();
+        straightTurn();
+        straightTurn();
 
+        //straightTurn();
+        //straightTurn();
 
-
-        // printGrid();
+        printGrid();
     }
 
     private void GameFinish()
     {
+        Debug.Log("Nå vant du");
         pling.Play();
         foreach (GameObject tempPipe in tempList)
         {
@@ -334,6 +337,6 @@ public class SnapZones : MonoBehaviour
         }
         tempList.Clear();
         StaticData.levelScores[1] = 100;
-        logic.WaitChangeScene(5.0f, "Menu");
+        //logic.WaitChangeScene(5.0f, "Menu");
     }
 }
