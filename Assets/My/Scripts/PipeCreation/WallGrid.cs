@@ -2,28 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloorGrid : MonoBehaviour
+public class WallGrid : MonoBehaviour
 {
     public Material gridMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (float i = -3.3f; i <= 3.3; i+=0.3f)
+        for (float i = 0.0f; i <= 3.9; i+=0.354f)
         {
             GameObject gridPart = createDefaultCube();
 
-            gridPart.transform.position = new Vector3(0, -0.015f, i);
-            gridPart.transform.localScale = new Vector3(5.0f, 0.03f, 0.03f);
+            gridPart.transform.localPosition = new Vector3(0, 0.1f, i);
+            gridPart.transform.localScale = new Vector3(0.02f, 3.8f, 0.02f);
         }
 
-        for (float i = -2.4f; i <= 2.4; i+=0.3f)
+        for (float i = 0.0f; i <= 2.1; i+=0.354f)
         {
             GameObject gridPart = createDefaultCube();
 
-            gridPart.transform.rotation = Quaternion.Euler(0, 90, 0);;
-            gridPart.transform.position = new Vector3(i, -0.015f, 0);
-            gridPart.transform.localScale = new Vector3(7.0f, 0.03f, 0.03f);
+            gridPart.transform.localPosition = new Vector3(0, i, 1.9f);
+            gridPart.transform.localScale = new Vector3(0.02f, 0.02f, 4.0f);
         }
     }
 

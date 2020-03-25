@@ -17,6 +17,8 @@ TagManager:
   - Hammer
   - Pipe
   - PipeWrench
+  - UpPipe
+  - DownPipe
   layers:
   - Default
   - TransparentFX
@@ -35,8 +37,8 @@ TagManager:
   - LeftPipe
   - RightPipe
   - buttonUp
-  - 
-  - 
+  - UpPipe
+  - DownPipe
   - 
   - WallBreak
   - 

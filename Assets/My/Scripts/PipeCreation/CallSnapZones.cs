@@ -13,15 +13,20 @@ public class CallSnapZones : MonoBehaviour
     {
         switch (pipeType)
         {
-            case "leftPipe":
-                script.leftTurn();
+            case "upPipe":
+                script.upTurn();
                 break;
-            case "rightPipe":
-                script.rightTurn();
+            case "downPipe":
+                script.downTurn();
                 break;
             case "straightPipe":
                 script.straightTurn();
                 break;
         }
+    }
+
+    public void callUnsnapped()
+    {
+        script.UnSnapped();
     }
 }
