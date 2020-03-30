@@ -155,7 +155,7 @@ BoxCollider:
   m_GameObject: {fileID: 3624544507869659121}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.14337882, y: 0.14477277, z: 0.35695896}
   m_Center: {x: -0.00039561093, y: -0.0004093647, z: -0.00018779933}
@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 1060318842466167247}
   - component: {fileID: 1309795385232979958}
   - component: {fileID: 2399141997145945672}
+  - component: {fileID: 2659054559464085918}
   m_Layer: 13
   m_Name: DefaultMesh
   m_TagString: Untagged
@@ -423,10 +424,24 @@ BoxCollider:
   m_GameObject: {fileID: 8394211461584623488}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &2659054559464085918
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394211461584623488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300004, guid: f7260c28ba15eea47ada6570bd80de0d, type: 3}
 --- !u!1 &8864748052470446821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1535,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf395407a1df60d4ebaad52cf81795fd, type: 3}
+--- !u!4 &4698038556165777761 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1390912125830776597, guid: bf395407a1df60d4ebaad52cf81795fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5944551506344996468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6795338301983804267 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 878956431874532639, guid: bf395407a1df60d4ebaad52cf81795fd,
@@ -1532,12 +1553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a13d018f05c4042b1942f33eabbfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &4698038556165777761 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1390912125830776597, guid: bf395407a1df60d4ebaad52cf81795fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 5944551506344996468}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7597818781940222753
 PrefabInstance:
   m_ObjectHideFlags: 0

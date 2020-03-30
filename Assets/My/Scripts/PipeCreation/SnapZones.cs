@@ -7,6 +7,7 @@ using TMPro;
 
 public class SnapZones : MonoBehaviour
 {
+
     public TextMeshProUGUI text;
 
     private CommonLogic logic;
@@ -20,7 +21,7 @@ public class SnapZones : MonoBehaviour
     public float pipeDimension;
 
     private int zPosition = 0;
-    private int yPosition = 1;
+    private int yPosition = 2;
 
     int goalSpotted;
 
@@ -35,7 +36,9 @@ public class SnapZones : MonoBehaviour
 
     private Transform parentObject;
 
-    private int[,] pipeGrid = new int[10, 5];
+    private int[,] pipeGrid = new int[10, 6];
+
+    int score;
 
     int direction = 0;
     int zDirection = 1;
@@ -66,13 +69,11 @@ public class SnapZones : MonoBehaviour
     {
         direction = 0;
         zDirection = 1;
-        yDirection = 1;
-        while (pipeGrid[zDirection, yDirection] != 0)
+        yDirection = 2;
+        while (pipeGrid[zDirection, yDirection] != 0 && pipeGrid[zDirection, yDirection] != 5)
         {
             switch (pipeGrid[zDirection, yDirection])
             {
-                case 0:
-                    return false;
                 case 1:
                     direction--;
                     break;
@@ -84,7 +85,6 @@ public class SnapZones : MonoBehaviour
                     break;
                 default:
                     pling.Play();
-                    Debug.Log("Traff Mål!");
                     return true;
             }
             UpdateDirection(direction);
@@ -233,8 +233,6 @@ public class SnapZones : MonoBehaviour
             createPipe(downPipe, "DownPipe");
         }
 
-        Debug.Log("Nå har templist størrelsen: " + tempList.Count());
-
         if (goalSpotted < tempList.Count)
         {
             Debug.Log("Goal spotted");
@@ -246,13 +244,20 @@ public class SnapZones : MonoBehaviour
                     tempList.RemoveAt(i);
                 }
             }
-            Debug.Log("TempList inni goalspotted antall ting:" + tempList.Count());
         }
 
         if (CheckRoute())
         {
             GameFinish();
         }
+
+        score--;
+        DisplayScore();
+    }
+
+    private void DisplayScore()
+    {
+        text.text = score.ToString();
     }
 
     private void createPipe(GameObject pipeType, string tag)
@@ -279,64 +284,92 @@ public class SnapZones : MonoBehaviour
         Debug.Log(logText);
     }
 
-    public void UnSnapped()
+    private void CreateObstacles()
     {
-        //pling.Play();
-        //Destroy(pipeList.ElementAt(pipeList.Count - 1));
-        //pipeList.RemoveAt(pipeList.Count - 1);
-        //newLocation(2);
+        for (int i = 1; i < pipeGrid.GetLength(0) - 2; i++)
+        {
+            for (int j = 0; j < pipeGrid.GetLength(1) - 1; j++)
+            {
+                pipeGrid[i, j] = 0;
+                if (Random.Range(0.0f, 1.0f) > 0.7)
+                {
+                    if (!(i == zPosition + 1 && j == yPosition))
+                    {
+                        pipeGrid[i, j] = 5;
+                        CreatePhysicalObstacles(i, j);
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < pipeGrid.GetLength(1); i++)
+        {
+            pipeGrid[9, i] = 5;
+            pipeGrid[0, i] = 5;
+        }
+
+        pipeGrid[9, 2] = 10;
     }
 
-    private void DeactivateSnapzones()
+    private void CreatePhysicalObstacles(int zPos, int yPos)
     {
-        // foreach (GameObject pipe in pipeList)
-        // {
-        //     pipe.GetComponent<SnapZoneFacade>().SnappedGameObject.transform.GetChild(1).gameObject.SetActive(false);
-        //     //pipe.GetComponent<SnapZoneFacade>().SnappedGameObject.transform.GetChild(2).gameObject.SetActive(false);
-        // }
-        // pipeList.ElementAt(pipeList.Count - 1).GetComponent<SnapZoneFacade>().SnappedGameObject.transform.GetChild(1).gameObject.SetActive(true);
-        // //pipeList.ElementAt(pipeList.Count - 1).GetComponent<SnapZoneFacade>().SnappedGameObject.transform.GetChild(2).gameObject.SetActive(true);
+        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.transform.parent = parentObject.GetChild(0).transform;
+        cube.transform.localScale = new Vector3(0.2f, pipeDimension, pipeDimension);
+        cube.transform.localPosition = new Vector3(0, yPos * pipeDimension, zPos * pipeDimension);
     }
 
     void Start()
     {
         logic = GameObject.Find("/Logic").GetComponent<CommonLogic>();
-        pipeGrid[0, 1] = 5;
-        for (int i = 0; i < pipeGrid.GetLength(1); i++)
-        {
-            pipeGrid[9, i] = 5;
-        }
-        pipeGrid[9, 1] = 10;
-
-
 
         parentObject = GameObject.Find("/Pipes").transform;
+
         pling = GetComponent<AudioSource>();
+
+        CreateStart();
+    }
+
+    public void CreateStart()
+    {
+        zPosition = 0;
+        yPosition = 2;
+        score = pipeGrid.GetLength(0) * pipeGrid.GetLength(1) + 1;
+
+        for (int i = 1; i < parentObject.childCount; i++)
+        {
+            Destroy(parentObject.GetChild(i).gameObject);
+        }
+        for (int i = 0; i < parentObject.GetChild(0).childCount; i++)
+        {
+            Destroy(parentObject.GetChild(0).GetChild(i).gameObject);
+        }
+        tempList.Clear();
+        pipeList.Clear();
+        CreateObstacles();
         createAllSnapZones();
 
-        straightTurn();
-        straightTurn();
-        straightTurn();
-        straightTurn();
-        straightTurn();
-        straightTurn();
-
-        //straightTurn();
-        //straightTurn();
+        // straightTurn();
+        // straightTurn();
+        // straightTurn();
+        // straightTurn();
+        // straightTurn();
+        // straightTurn();
+        // straightTurn();
+        // straightTurn();
 
         printGrid();
     }
 
     private void GameFinish()
     {
-        Debug.Log("Nå vant du");
         pling.Play();
         foreach (GameObject tempPipe in tempList)
         {
             Destroy(tempPipe);
         }
         tempList.Clear();
-        StaticData.levelScores[1] = 100;
-        //logic.WaitChangeScene(5.0f, "Menu");
+        StaticData.levelScores[1] = score;
+        logic.WaitChangeScene(5.0f, "Menu");
     }
 }

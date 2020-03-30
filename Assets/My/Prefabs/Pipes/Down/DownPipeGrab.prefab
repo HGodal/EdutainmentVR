@@ -42,7 +42,7 @@ BoxCollider:
   m_GameObject: {fileID: 1265644354673235037}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.13342345, y: 0.14531931, z: 0.2375173}
   m_Center: {x: -0.004625153, y: 0.0005837232, z: -0.05901274}
@@ -55,7 +55,7 @@ BoxCollider:
   m_GameObject: {fileID: 1265644354673235037}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.10922316, y: 0.1543529, z: 0.14972502}
   m_Center: {x: -0.12674303, y: -0.0016452074, z: -0.0017495453}
@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 3272853098828546659}
   - component: {fileID: 3598889735750081626}
   - component: {fileID: 186888648962465252}
+  - component: {fileID: 7829015424449840237}
   m_Layer: 18
   m_Name: DefaultMesh
   m_TagString: Untagged
@@ -260,10 +261,24 @@ BoxCollider:
   m_GameObject: {fileID: 6314814182142032940}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &7829015424449840237
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314814182142032940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300004, guid: 95b8d7fadd7c26d42b50b69efecd7ac1, type: 3}
 --- !u!1 &6402264558084886857
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +386,7 @@ GameObject:
   - component: {fileID: 7460416710749370672}
   - component: {fileID: 6377206078052431304}
   m_Layer: 18
-  m_Name: DownPipeGrab 1
+  m_Name: DownPipeGrab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
