@@ -20,6 +20,12 @@ public class CheckObjects : MonoBehaviour
 
     private void Start() {
 
+        Correct = GetComponent<AudioSource>();
+
+        hinge = GameObject.Find("/VentA");
+        Vent1 = GameObject.Find("/Vent1");
+        close = GameObject.Find("/SluttVent");
+
         Ventilation = GetComponent<AudioSource>();
         endScore = 15;
         counter = 0;
@@ -54,13 +60,6 @@ public class CheckObjects : MonoBehaviour
 
     public void checkValid() 
     {
-        Correct = GetComponent<AudioSource>();
-
-        hinge = GameObject.Find("/VentA");
-        Vent1 = GameObject.Find("/Vent1");
-        close = GameObject.Find("/SluttVent");
-        
-
         Vector3 test = new Vector3(-1.6f, 2.28f, -2.7f);
         Vector3 test1 = new Vector3(-2.34f, 2.18f, -2.82f);
         

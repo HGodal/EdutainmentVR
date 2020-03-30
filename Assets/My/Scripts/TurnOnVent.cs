@@ -18,6 +18,12 @@ public class TurnOnVent : MonoBehaviour
         countDownTimer = GameObject.Find("ButtonVent/Button1/Front/CountDown").GetComponent<CountDown>();
         logic = GameObject.Find("Logic").GetComponent<CommonLogic>();
         infoGUI = GameObject.Find("/InfoCanvas/InfoText").GetComponent<TextMeshProUGUI>();
+
+        hinge = GameObject.Find("/VentA");
+        Vent1 = GameObject.Find("/Vent1");
+        close = GameObject.Find("/SluttVent");
+
+        Ventilation = GetComponent<AudioSource>();
     }
     
     public void WriteInfo(string text)
@@ -25,14 +31,7 @@ public class TurnOnVent : MonoBehaviour
         infoGUI.text = text;
     }
    
-    private void OnTriggerEnter(Collider other) {
-
-        Ventilation = GetComponent<AudioSource>();
-        
-        hinge = GameObject.Find("/VentA");
-        Vent1 = GameObject.Find("/Vent1");
-        close = GameObject.Find("/SluttVent");
-        
+    private void OnTriggerEnter(Collider other) { 
 
         Vector3 test = new Vector3(-1.6f, 2.28f, -2.7f);
         Vector3 test1 = new Vector3(-2.34f, 2.18f, -2.82f);
