@@ -1,0 +1,9 @@
+# MTL file export by ArcSoft Inc.
+newmtl color-map
+Ka 0.429000 0.535000 0.382000
+Kd 0.429000 0.535000 0.382000
+Ks 0 0 0
+Ns 5
+illum 2
+d 1
+map_Kd 1584446334387.texture
