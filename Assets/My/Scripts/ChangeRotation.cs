@@ -11,10 +11,11 @@ public class ChangeRotation : MonoBehaviour
     void Start()
     {   
         Correct.GetComponent<AudioSource>();
+        close = GameObject.Find("/SluttVent");
     }
 
     private void OnTriggerEnter(Collider other) {
-        close = GameObject.Find("/SluttVent");
+       
         close.transform.rotation = Quaternion.Euler(0, 90, 0);
         Correct.Play();
     }
