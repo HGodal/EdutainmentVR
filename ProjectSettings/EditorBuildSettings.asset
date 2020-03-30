@@ -5,34 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-
-
   - enabled: 1
-
     path: Assets/My/Scenes/Menu.unity
-    guid: 65e69b3f4e7cc43ccb7e01cd88063d07
-  - enabled: 0
-    path: Assets/My/Scenes/Menu 3.unity
     guid: 6e64bbc983ef75e42bad8e54bd72f848
-
   - enabled: 1
     path: Assets/My/Scenes/SaveScore.unity
     guid: be0877c7c0e7730439b46b8d179d6f58
   - enabled: 1
     path: Assets/My/Scenes/Ror4.unity
     guid: 111c5ee17fe6d487290203ec8a9f52b8
-
   - enabled: 0
     path: Assets/My/Scenes/Ror1.unity
     guid: 984eea4d38fe342e099a15782bba002d
   - enabled: 0
-
     path: Assets/My/Scenes/Menu 2.unity
     guid: 65e69b3f4e7cc43ccb7e01cd88063d07
   - enabled: 0
     path: Assets/My/Scenes/Ror3.unity
     guid: 2cdbe45628721a943afe2114d77c7746
-
   - enabled: 0
     path: Assets/My/Scenes/Ror2.unity
     guid: 141260a6ecfde23488b38f72442ec17a
@@ -48,7 +38,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/My/Scenes/Empty.unity
     guid: 4ad1b395cf2fd4c1aa1c652a96062070
-  - enabled: 1
-    path: Assets/My/Scenes/ventilasjon1.unity
-    guid: a1c10868362af4339aab6fc5c62b3400
   m_configObjects: {}
