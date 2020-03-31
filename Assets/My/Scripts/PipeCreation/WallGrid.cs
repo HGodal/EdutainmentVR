@@ -6,10 +6,9 @@ public class WallGrid : MonoBehaviour
 {
     public Material gridMaterial;
 
-    // Start is called before the first frame update
     void Start()
     {
-        for (float i = 0.0f; i <= 3.9; i+=0.354f)
+        for (float i = 0.0f; i <= 3.9; i += 0.354f)
         {
             GameObject gridPart = CreateDefaultCube();
 
@@ -17,7 +16,7 @@ public class WallGrid : MonoBehaviour
             gridPart.transform.localScale = new Vector3(0.02f, 3.8f, 0.02f);
         }
 
-        for (float i = 0.0f; i <= 2.1; i+=0.354f)
+        for (float i = 0.0f; i <= 2.1; i += 0.354f)
         {
             GameObject gridPart = CreateDefaultCube();
 
@@ -26,12 +25,13 @@ public class WallGrid : MonoBehaviour
         }
     }
 
-    private GameObject CreateDefaultCube(){
-            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            cube.transform.parent = GameObject.Find("/Grid").transform;
-            Destroy(cube.GetComponent<BoxCollider>());
-            cube.GetComponent<Renderer>().material = gridMaterial;
-            cube.layer = 9;
-            return cube;
+    private GameObject CreateDefaultCube()
+    {
+        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.transform.parent = GameObject.Find("/Grid").transform;
+        Destroy(cube.GetComponent<BoxCollider>());
+        cube.GetComponent<Renderer>().material = gridMaterial;
+        cube.layer = 9;
+        return cube;
     }
 }
