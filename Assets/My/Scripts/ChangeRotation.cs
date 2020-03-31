@@ -5,19 +5,20 @@ using UnityEngine;
 public class ChangeRotation : MonoBehaviour
 {
     private GameObject close;
-    private AudioSource correct;
-
+    AudioSource Correct;
+   
+    // Start is called before the first frame update
     void Start()
-    {
-        correct = GetComponent<AudioSource>();
+    {   
+        Correct.GetComponent<AudioSource>();
         close = GameObject.Find("/SluttVent");
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    private void OnTriggerEnter(Collider other) {
+       
         close.transform.rotation = Quaternion.Euler(0, 90, 0);
-        correct.Play();
+        Correct.Play();
     }
 
-
+   
 }
