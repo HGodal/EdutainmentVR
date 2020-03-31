@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 862107707687946490}
   - component: {fileID: 862107707686816314}
   - component: {fileID: 862107707682732634}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8186591499353653197}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: UpPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

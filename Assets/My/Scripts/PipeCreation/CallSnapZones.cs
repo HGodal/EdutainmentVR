@@ -19,13 +19,13 @@ public class CallSnapZones : MonoBehaviour
         switch (pipeType)
         {
             case "upPipe":
-                script.upTurn();
-                break;
-            case "downPipe":
-                script.downTurn();
+                script.UpTurn();
                 break;
             case "straightPipe":
-                script.straightTurn();
+                script.StraightTurn();
+                break;
+            case "downPipe":
+                script.DownTurn();
                 break;
         }
         gameObject.transform.GetChild(0).gameObject.SetActive(false);

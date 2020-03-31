@@ -1,14 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using VRTK.Prefabs.Interactions.InteractableSnapZone;
 using TMPro;
 
 public class SnapZones : MonoBehaviour
 {
 
     public TextMeshProUGUI text;
+    public TextMeshProUGUI infoText;
 
     private CommonLogic logic;
 
@@ -44,9 +43,138 @@ public class SnapZones : MonoBehaviour
     int zDirection = 1;
     int yDirection = 1;
 
+    //  Initialize --------------------------------------------------------------------------------
+    void Start()
+    {
+        logic = GameObject.Find("/Logic").GetComponent<CommonLogic>();
+
+        parentObject = GameObject.Find("/Pipes").transform;
+
+        pling = GetComponent<AudioSource>();
+
+        infoText.text = "Her må du koble sammen rørene på veggen til venstre for deg.\n" +
+                        "Det er plassert hindringer for å gjøre oppgaven litt vanskeligere.\n" +
+                        "Du må bruke knappene på høyre vegg for å lage rørene du trenger.\n\n" +
+                        "Det er om å gjøre å bruke så få rør som mulig.\n\n" +
+                        "Hvis det er umulig å koble rørene sammen eller at du har gjort feil,\n" +
+                        "kan du trykke på den røde knappen for å tilbakestille banen.";
+
+        CreateStart();
+    }
+
+    public void CreateStart()
+    {
+        zPosition = 0;
+        yPosition = 2;
+        score = pipeGrid.GetLength(0) * pipeGrid.GetLength(1) + 1;
+
+        for (int i = 1; i < parentObject.childCount; i++)
+        {
+            Destroy(parentObject.GetChild(i).gameObject);
+        }
+        for (int i = 0; i < parentObject.GetChild(0).childCount; i++)
+        {
+            Destroy(parentObject.GetChild(0).GetChild(i).gameObject);
+        }
+        tempList.Clear();
+        pipeList.Clear();
+        CreateObstacles();
+        CreateAllSnapZones();
+
+        PrintGrid();
+    }
+
+    //  Call Class --------------------------------------------------------------------------------
+    public void UpTurn()
+    {
+        ChangeAngle(-1);
+        pipeGrid[zPosition, yPosition] = 1;
+        AddPipeToList("UpPipe");
+        CreateAllSnapZones();
+    }
+
+    public void StraightTurn()
+    {
+        ChangeAngle(0);
+        pipeGrid[zPosition, yPosition] = 2;
+        AddPipeToList("StraightPipe");
+        CreateAllSnapZones();
+    }
+
+    public void DownTurn()
+    {
+        ChangeAngle(1);
+        pipeGrid[zPosition, yPosition] = 3;
+        AddPipeToList("DownPipe");
+        CreateAllSnapZones();
+    }
+
+    //  Create Snapzones --------------------------------------------------------------------------------
+    private void CreateAllSnapZones()
+    {
+        NewLocation(0);
+        foreach (GameObject tempPipe in tempList)
+        {
+            if (!pipeList.Contains(tempPipe))
+            {
+                Destroy(tempPipe);
+            }
+        }
+        tempList.Clear();
+
+        goalSpotted = 10;
+
+        if (CheckIfNextAvailable(0))
+        {
+            CreatePipe(upPipe, "UpPipe");
+        }
+
+        if (CheckIfNextAvailable(1))
+        {
+            CreatePipe(straightPipe, "StraightPipe");
+        }
+
+        if (CheckIfNextAvailable(2))
+        {
+            CreatePipe(downPipe, "DownPipe");
+        }
+
+        if (goalSpotted < tempList.Count)
+        {
+            Debug.Log("Goal spotted");
+            for (int i = tempList.Count - 1; i >= 0; i--)
+            {
+                if (i != goalSpotted)
+                {
+                    Destroy(tempList.ElementAt(i));
+                    tempList.RemoveAt(i);
+                }
+            }
+        }
+
+        if (CheckRoute())
+        {
+            GameFinish();
+        }
+
+        score--;
+        DisplayScore();
+    }
+
+    private void CreatePipe(GameObject pipeType, string tag)
+    {
+        GameObject newPipe = Instantiate(pipeType);
+        newPipe.transform.parent = parentObject;
+        newPipe.transform.localPosition = new Vector3(0.0f, yPosition * pipeDimension, zPosition * pipeDimension);
+        newPipe.transform.localRotation = Quaternion.Euler(angles[angle], 0.0f, 0.0f);
+        newPipe.tag = tag;
+        tempList.Add(newPipe);
+    }
+
+    //  Calculate Next Position --------------------------------------------------------------------------------
     private void UpdateDirection(int retning)
     {
-        retning = mod(retning, 4);
+        retning = Mod(retning, 4);
 
         switch (retning)
         {
@@ -93,19 +221,19 @@ public class SnapZones : MonoBehaviour
         return false;
     }
 
-    int mod(int x, int m)
+    int Mod(int x, int m)
     {
         return (x % m + m) % m;
     }
 
-    private void changeAngle(int change)
+    private void ChangeAngle(int change)
     {
-        angle = mod(angle + change, 4);
+        angle = Mod(angle + change, 4);
     }
 
-    private void newLocation(int angleChange)
+    private void NewLocation(int angleChange)
     {
-        switch (mod(angle + angleChange, 4))
+        switch (Mod(angle + angleChange, 4))
         {
             case 0:
                 zPosition += 1;
@@ -122,44 +250,9 @@ public class SnapZones : MonoBehaviour
         }
     }
 
-    public void upTurn()
+    private bool CheckIfNextAvailable(int type)
     {
-        changeAngle(-1);
-        pipeGrid[zPosition, yPosition] = 1;
-        addPipeToList("UpPipe");
-        createAllSnapZones();
-    }
-
-    public void straightTurn()
-    {
-        changeAngle(0);
-        pipeGrid[zPosition, yPosition] = 2;
-        addPipeToList("StraightPipe");
-        createAllSnapZones();
-    }
-
-    public void downTurn()
-    {
-        changeAngle(1);
-        pipeGrid[zPosition, yPosition] = 3;
-        addPipeToList("DownPipe");
-        createAllSnapZones();
-    }
-
-    private void addPipeToList(string pipeTag)
-    {
-        foreach (GameObject pipe in tempList)
-        {
-            if (pipe.tag.Equals(pipeTag))
-            {
-                pipeList.Add(pipe);
-            }
-        }
-    }
-
-    private bool checkIfNextAvailable(int type)
-    {
-        int tempAngle = mod(angle + type, 4);
+        int tempAngle = Mod(angle + type, 4);
 
         switch (tempAngle)
         {
@@ -204,86 +297,7 @@ public class SnapZones : MonoBehaviour
         return false;
     }
 
-    private void createAllSnapZones()
-    {
-        newLocation(0);
-        foreach (GameObject tempPipe in tempList)
-        {
-            if (!pipeList.Contains(tempPipe))
-            {
-                Destroy(tempPipe);
-            }
-        }
-        tempList.Clear();
-
-        goalSpotted = 10;
-
-        if (checkIfNextAvailable(0))
-        {
-            createPipe(upPipe, "UpPipe");
-        }
-
-        if (checkIfNextAvailable(1))
-        {
-            createPipe(straightPipe, "StraightPipe");
-        }
-
-        if (checkIfNextAvailable(2))
-        {
-            createPipe(downPipe, "DownPipe");
-        }
-
-        if (goalSpotted < tempList.Count)
-        {
-            Debug.Log("Goal spotted");
-            for (int i = tempList.Count - 1; i >= 0; i--)
-            {
-                if (i != goalSpotted)
-                {
-                    Destroy(tempList.ElementAt(i));
-                    tempList.RemoveAt(i);
-                }
-            }
-        }
-
-        if (CheckRoute())
-        {
-            GameFinish();
-        }
-
-        score--;
-        DisplayScore();
-    }
-
-    private void DisplayScore()
-    {
-        text.text = score.ToString();
-    }
-
-    private void createPipe(GameObject pipeType, string tag)
-    {
-        GameObject newPipe = Instantiate(pipeType);
-        newPipe.transform.parent = parentObject;
-        newPipe.transform.localPosition = new Vector3(0.0f, yPosition * pipeDimension, zPosition * pipeDimension);
-        newPipe.transform.localRotation = Quaternion.Euler(angles[angle], 0.0f, 0.0f);
-        newPipe.tag = tag;
-        tempList.Add(newPipe);
-    }
-
-    private void printGrid()
-    {
-        string logText = "\n";
-        for (int i = pipeGrid.GetLength(1) - 1; i >= 0; i--)
-        {
-            for (int j = 0; j < pipeGrid.GetLength(0); j++)
-            {
-                logText += "[" + pipeGrid[j, i] + "]";
-            }
-            logText += "\n";
-        }
-        Debug.Log(logText);
-    }
-
+    //  Create Obstacles --------------------------------------------------------------------------------
     private void CreateObstacles()
     {
         for (int i = 1; i < pipeGrid.GetLength(0) - 2; i++)
@@ -317,50 +331,10 @@ public class SnapZones : MonoBehaviour
         cube.transform.parent = parentObject.GetChild(0).transform;
         cube.transform.localScale = new Vector3(0.2f, pipeDimension, pipeDimension);
         cube.transform.localPosition = new Vector3(0, yPos * pipeDimension, zPos * pipeDimension);
+        cube.GetComponent<Renderer>().material.color = new Color(0.2f, 0.2f, 0.2f);
     }
 
-    void Start()
-    {
-        logic = GameObject.Find("/Logic").GetComponent<CommonLogic>();
-
-        parentObject = GameObject.Find("/Pipes").transform;
-
-        pling = GetComponent<AudioSource>();
-
-        CreateStart();
-    }
-
-    public void CreateStart()
-    {
-        zPosition = 0;
-        yPosition = 2;
-        score = pipeGrid.GetLength(0) * pipeGrid.GetLength(1) + 1;
-
-        for (int i = 1; i < parentObject.childCount; i++)
-        {
-            Destroy(parentObject.GetChild(i).gameObject);
-        }
-        for (int i = 0; i < parentObject.GetChild(0).childCount; i++)
-        {
-            Destroy(parentObject.GetChild(0).GetChild(i).gameObject);
-        }
-        tempList.Clear();
-        pipeList.Clear();
-        CreateObstacles();
-        createAllSnapZones();
-
-        // straightTurn();
-        // straightTurn();
-        // straightTurn();
-        // straightTurn();
-        // straightTurn();
-        // straightTurn();
-        // straightTurn();
-        // straightTurn();
-
-        printGrid();
-    }
-
+    //  Finish Game --------------------------------------------------------------------------------
     private void GameFinish()
     {
         pling.Play();
@@ -370,6 +344,39 @@ public class SnapZones : MonoBehaviour
         }
         tempList.Clear();
         StaticData.levelScores[1] = score;
+        infoText.text = "Gratulerer! Nå renner vannet slik det skal igjen. \n\n" +
+                        "Du bil tatt tilbake til hovedmenyen om 5 sekund.";
         logic.WaitChangeScene(5.0f, "Menu");
+    }
+
+    //  Other Methods --------------------------------------------------------------------------------
+    private void AddPipeToList(string pipeTag)
+    {
+        foreach (GameObject pipe in tempList)
+        {
+            if (pipe.tag.Equals(pipeTag))
+            {
+                pipeList.Add(pipe);
+            }
+        }
+    }
+
+    private void DisplayScore()
+    {
+        text.text = score.ToString();
+    }
+
+    private void PrintGrid()
+    {
+        string logText = "\n";
+        for (int i = pipeGrid.GetLength(1) - 1; i >= 0; i--)
+        {
+            for (int j = 0; j < pipeGrid.GetLength(0); j++)
+            {
+                logText += "[" + pipeGrid[j, i] + "]";
+            }
+            logText += "\n";
+        }
+        Debug.Log(logText);
     }
 }
