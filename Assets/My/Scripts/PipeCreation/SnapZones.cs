@@ -19,8 +19,8 @@ public class SnapZones : MonoBehaviour
 
     public float pipeDimension;
 
-    private int zPosition = 0;
-    private int yPosition = 2;
+    private int zPosition;
+    private int yPosition;
 
     int goalSpotted;
 
@@ -30,7 +30,7 @@ public class SnapZones : MonoBehaviour
     private List<GameObject> pipeList = new List<GameObject>();
     private List<GameObject> tempList = new List<GameObject>();
 
-    private int angle = 0;
+    private int angle;
     private float[] angles = new float[4] { 0f, 90f, 180f, 270f };
 
     private Transform parentObject;
@@ -39,9 +39,9 @@ public class SnapZones : MonoBehaviour
 
     int score;
 
-    int direction = 0;
-    int zDirection = 1;
-    int yDirection = 1;
+    int direction;
+    int zDirection;
+    int yDirection;
 
     //  Initialize --------------------------------------------------------------------------------
     void Start()
@@ -66,6 +66,12 @@ public class SnapZones : MonoBehaviour
     {
         zPosition = 0;
         yPosition = 2;
+        angle = 0;
+
+        direction = 0;
+        zDirection = 1;
+        yDirection = 1;
+
         score = pipeGrid.GetLength(0) * pipeGrid.GetLength(1) + 1;
 
         for (int i = 1; i < parentObject.childCount; i++)
@@ -152,13 +158,13 @@ public class SnapZones : MonoBehaviour
             }
         }
 
+        score--;
+        DisplayScore();
+
         if (CheckRoute())
         {
             GameFinish();
         }
-
-        score--;
-        DisplayScore();
     }
 
     private void CreatePipe(GameObject pipeType, string tag)
