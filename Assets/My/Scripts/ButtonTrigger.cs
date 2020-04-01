@@ -7,12 +7,9 @@ public class ButtonTrigger : MonoBehaviour
     public Transform pipePrefab;
     public Transform spawnPoint;
 
-    private void OnTriggerEnter(Collider other)
+    public void InitiatePipe()
     {
-        //if (other.CompareTag("PointerFingerTip"))
-        //{
-            Transform t = Instantiate(pipePrefab);
-            t.position = spawnPoint.position;
-        //}
+        Transform t = Instantiate(pipePrefab);
+        t.position = spawnPoint.position;
     }
 }
