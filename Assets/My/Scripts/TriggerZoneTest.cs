@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TriggerZoneTest : MonoBehaviour
 {
@@ -8,17 +6,19 @@ public class TriggerZoneTest : MonoBehaviour
     public AudioSource correctSound;
     public AudioSource incorrectSound;
 
-    private void Start() {
-        
+    private void Start()
+    {
+
     }
 
-    public void OnTriggerEnter(Collider collider) {
+    public void OnTriggerEnter(Collider collider)
+    {
 
-        if(collider.gameObject.tag == "Valid")
+        if (collider.gameObject.tag == "Valid")
         {
             correctSound.Play();
         }
-        else if(collider.gameObject.tag == "Invalid")
+        else if (collider.gameObject.tag == "Invalid")
         {
             incorrectSound.Play();
         }

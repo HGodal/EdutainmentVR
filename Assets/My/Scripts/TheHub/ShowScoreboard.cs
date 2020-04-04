@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class ShowScoreBoard : MonoBehaviour
+public class ShowScoreboard : MonoBehaviour
 {
     public TextMeshProUGUI currentScore;
     public GameObject scorePanel;

@@ -44,7 +44,7 @@ public class TurnOnVent : MonoBehaviour
                     Ventilation.Play();
                     WriteInfo("Gratulerer du vant spillet! \n\n du blir teleportert tilbake til menyen om 8 sekunder");
                     countDownTimer.isPaused = true;
-                    StaticData.levelScores[0] = Mathf.FloorToInt(countDownTimer.getTimer());
+                    StaticData.levelScores[0] = Mathf.FloorToInt(countDownTimer.GetTimer());
                     logic.WaitChangeScene(8.0f, "Menu");
                 }
             }
