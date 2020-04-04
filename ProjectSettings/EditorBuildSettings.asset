@@ -14,15 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/My/Scenes/UkjentNavn.unity
     guid: 6aae192d5f8a4a34ab278ce4417d4e39
+  - enabled: 1
+    path: Assets/My/Scenes/Rorlegging/VerktoySortering.unity
+    guid: 984eea4d38fe342e099a15782bba002d
   - enabled: 0
     path: Assets/My/Scenes/Rorlegging/RorBygger.unity
     guid: 2cdbe45628721a943afe2114d77c7746
   - enabled: 0
     path: Assets/My/Scenes/Rorlegging/RorFikser.unity
     guid: 111c5ee17fe6d487290203ec8a9f52b8
-  - enabled: 0
-    path: Assets/My/Scenes/Rorlegging/VerktoySortering.unity
-    guid: 984eea4d38fe342e099a15782bba002d
   - enabled: 0
     path: Assets/My/Scenes/Ikke i bruk/Menu 2.unity
     guid: 65e69b3f4e7cc43ccb7e01cd88063d07

@@ -362,58 +362,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143565651}
   m_CullTransparentMesh: 0
---- !u!1 &166407353
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 166407355}
-  - component: {fileID: 166407354}
-  m_Layer: 0
-  m_Name: PauseMenuLogic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &166407354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166407353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 321c68e04478d4c20ad990a0f2893377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleporter: {fileID: 0}
-  playArea: {fileID: 0}
-  headOrientation: {fileID: 0}
-  pauseLocation: {fileID: 0}
-  gameLocation: {fileID: 0}
-  pauseItems: []
-  gameItems: []
-  teleportationRelease: {fileID: 0}
-  teleportationPress: {fileID: 0}
---- !u!4 &166407355
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166407353}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1083856185}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &182725053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1246,7 +1194,6 @@ Transform:
   - {fileID: 973694911}
   - {fileID: 2045814858}
   - {fileID: 1254474178}
-  - {fileID: 166407355}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1282,7 +1229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letterButton: {fileID: 922952667113761358, guid: f82f715c97f6dc8409ce4dbc94f01628,
     type: 3}
-  nameText: {fileID: 0}
 --- !u!4 &1254474178
 Transform:
   m_ObjectHideFlags: 0

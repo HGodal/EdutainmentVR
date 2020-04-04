@@ -9,7 +9,6 @@ public class CreateAlphabet : MonoBehaviour
     private string alphabet;
     private int line;
     private int row;
-    public TextMeshProUGUI nameText;
 
     private void Start()
     {

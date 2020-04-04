@@ -49,9 +49,9 @@ public class PauseMenuLogic : MonoBehaviour
             item.SetActive(!inPauseMenu);
         }
 
-        if (GameObject.Find("/Logic"))
+        if (GameObject.Find("/RoomsAndVR/Logic/CountdownLogic"))
         {
-            GameObject.Find("/Logic").transform.GetChild(0).GetComponent<CountDown>().isPaused = inPauseMenu;
+            GameObject.Find("/RoomsAndVR/Logic/CountdownLogic").GetComponent<Countdown>().isPaused = inPauseMenu;
         }
     }
     public void ResetGame()

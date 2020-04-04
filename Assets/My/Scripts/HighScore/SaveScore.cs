@@ -7,19 +7,22 @@ public class SaveScore : MonoBehaviour
 {
     private string[] hei;
     private TextMeshProUGUI writtenName;
+    private TextMeshProUGUI currentScore;
     private string[] listedUser;
 
     void Start()
     {
         listedUser = new string[2];
         writtenName = GameObject.Find("/Canvases/ScoreCanvas/Panel/NameText").GetComponent<TextMeshProUGUI>();
+        currentScore = GameObject.Find("/Canvases/ScoreCanvas/Panel/ScoreValue").GetComponent<TextMeshProUGUI>();
+        currentScore.text = StaticData.GetScore().ToString();
     }
 
     public void CreateScore()
     {
         string[,] scores = ScoreLogic.StringToList(PlayerPrefs.GetString("HighScore"));
 
-        string[] tempUser = new string[2] { writtenName.text, StaticData.GetScore().ToString() };
+        string[] tempUser = new string[2] { writtenName.text, currentScore.text };
         for (int i = 0; i < scores.GetLength(0); i++)
         {
             listedUser[0] = scores[i, 0];

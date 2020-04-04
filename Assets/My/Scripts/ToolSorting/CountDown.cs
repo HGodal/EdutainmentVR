@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class CountDown : MonoBehaviour
+public class Countdown : MonoBehaviour
 {
     private DisplayText displayText;
 
@@ -74,8 +74,7 @@ public class CountDown : MonoBehaviour
         correctTime = string.Format("{0:00}:{1:00}", minutes, seconds);
         countdownText.text = "<mspace=6>" + correctTime + "</mspace>";
 
-        // change to something else!!
-        if (timer <= 0.0f || timer > timerDiff + 1)
+        if (timer <= 1.0f || timer > timerDiff + 1)
         {
             isPaused = true;
             coachWhistle.Play();

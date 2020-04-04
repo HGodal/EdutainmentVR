@@ -15,7 +15,7 @@ public class CheckObjects : MonoBehaviour
     private GameObject Vent1;
     AudioSource Correct;
     AudioSource Ventilation;
-    CountDown countDownTimer;
+    Countdown countDownTimer;
     CommonLogic logic;
 
     private void Start() {
@@ -29,7 +29,7 @@ public class CheckObjects : MonoBehaviour
         Ventilation = GetComponent<AudioSource>();
         endScore = 15;
         counter = 0;
-        countDownTimer = GameObject.Find("ButtonVent/Button1/Front/CountDown").GetComponent<CountDown>();
+        countDownTimer = GameObject.Find("ButtonVent/Button1/Front/CountDown").GetComponent<Countdown>();
         logic = GameObject.Find("Logic").GetComponent<CommonLogic>();
 
         infoGUI = GameObject.Find("/InfoCanvas/InfoText").GetComponent<TextMeshProUGUI>();

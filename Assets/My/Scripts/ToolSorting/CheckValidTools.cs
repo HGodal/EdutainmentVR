@@ -5,7 +5,7 @@ public class CheckValidTools : MonoBehaviour
 {
     private DisplayText[] displayText;
     private CommonLogic commonLogic;
-    private CountDown countDownTimer;
+    private Countdown countDownTimer;
     private AudioSource[] sounds;
 
     private int counter;
@@ -16,7 +16,7 @@ public class CheckValidTools : MonoBehaviour
     {
         displayText = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponents<DisplayText>();
         commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
-        countDownTimer = GameObject.Find("/RoomsAndVR/Logic/CountDown").GetComponent<CountDown>();
+        countDownTimer = GameObject.Find("/RoomsAndVR/Logic/CountdownLogic").GetComponent<Countdown>();
         sounds = GetComponents<AudioSource>();
 
         counter = 0;

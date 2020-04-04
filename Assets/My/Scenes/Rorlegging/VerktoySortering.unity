@@ -1619,6 +1619,26 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 903369411383586089, guid: 90c273db8c6835f499f30feec8432950,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903369411383586089, guid: 90c273db8c6835f499f30feec8432950,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903369411383586089, guid: 90c273db8c6835f499f30feec8432950,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 903369411383586089, guid: 90c273db8c6835f499f30feec8432950,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 903369411910681750, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
       propertyPath: m_IsActive
@@ -1632,12 +1652,17 @@ PrefabInstance:
     - target: {fileID: 903369412275098522, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
       propertyPath: timerDiff
-      value: 10
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 903369412275098534, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 903369412275098534, guid: 90c273db8c6835f499f30feec8432950,
+        type: 3}
+      propertyPath: m_Name
+      value: CountdownLogic
       objectReference: {fileID: 0}
     - target: {fileID: 903369413160003823, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}

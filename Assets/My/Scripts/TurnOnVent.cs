@@ -8,13 +8,13 @@ public class TurnOnVent : MonoBehaviour
     private GameObject close;
     TextMeshProUGUI counterGUI;
     AudioSource Ventilation;
-    CountDown countDownTimer;
+    Countdown countDownTimer;
     CommonLogic logic;
     TextMeshProUGUI infoGUI;
 
     private void Start()
     {
-        countDownTimer = GameObject.Find("ButtonVent/Button1/Front/CountDown").GetComponent<CountDown>();
+        countDownTimer = GameObject.Find("ButtonVent/Button1/Front/CountDown").GetComponent<Countdown>();
         logic = GameObject.Find("Logic").GetComponent<CommonLogic>();
         infoGUI = GameObject.Find("/InfoCanvas/InfoText").GetComponent<TextMeshProUGUI>();
 
