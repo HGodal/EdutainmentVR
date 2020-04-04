@@ -116,7 +116,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9171153630083638878}
-        m_MethodName: writeLetter
+        m_MethodName: WriteLetter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

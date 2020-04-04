@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 public class ScoreLogic : MonoBehaviour
 {
+    static string[,] arrayScore;
     static string[] spearator = { "|", "," };
     static string stringScore;
-    static string[,] arrayScore;
 
-    public static string listToString(string[,] list)
+    public static string ListToString(string[,] list)
     {
         stringScore = "";
         for (int i = 0; i < list.GetLength(0); i++)
@@ -19,7 +17,7 @@ public class ScoreLogic : MonoBehaviour
         return stringScore;
     }
 
-    public static string[,] stringToList(string text)
+    public static string[,] StringToList(string text)
     {
         int x = 0;
         int y = 0;

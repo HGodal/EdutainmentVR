@@ -1,31 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class ShowScoreBoard : MonoBehaviour
 {
+    public TextMeshProUGUI currentScore;
     public GameObject scorePanel;
+
     private int line;
     private int row;
 
-    // Start is called before the first frame update
-
-    public void ResetTopList()
+    private void Start()
     {
-        PlayerPrefs.SetString("HighScore", "|,|,|,|,|,|,|,|,|,|,");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-    }
+        ShowCurrentScore();
 
-    void Awake()
-    {
-        if (PlayerPrefs.GetString("HighScore").Equals(""))
-        {
-            PlayerPrefs.SetString("HighScore", "|,|,|,|,|,|,|,|,|,|,");
-        }
+        CheckValidFormat();
 
-        string[,] scoreTest = ScoreLogic.stringToList(PlayerPrefs.GetString("HighScore"));
+        string[,] scoreTest = ScoreLogic.StringToList(PlayerPrefs.GetString("HighScore"));
 
         for (int i = 0; i < 10; i++)
         {
@@ -33,25 +23,36 @@ public class ShowScoreBoard : MonoBehaviour
             row = Mathf.FloorToInt(i / 5);
 
             GameObject newPanel = Instantiate(scorePanel);
-            newPanel.transform.SetParent(GameObject.Find("/HighScoreCanvas/HighScorePanel").transform);
+            newPanel.transform.SetParent(GameObject.Find("/Canvases/HighScoreCanvas/HighScorePanel").transform);
             newPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i + 1).ToString() + ". " + scoreTest[i, 0] + " " + scoreTest[i, 1];
-
-            RectTransform rect = newPanel.GetComponent<RectTransform>();
-
             newPanel.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 
+            RectTransform rect = newPanel.GetComponent<RectTransform>();
             rect.anchoredPosition3D = new Vector3(0, 0, 0);
-
-            //Left
             rect.offsetMin = new Vector2(2 + 93 * row, rect.offsetMin.y);
-            //Right
             rect.offsetMax = new Vector2(-95 + 93 * row, rect.offsetMax.y);
-            //Top
             rect.offsetMax = new Vector2(rect.offsetMax.x, -13 - 17 * line);
-            //Bottom
             rect.offsetMin = new Vector2(rect.offsetMin.x, 70 - 17 * line);
-
             rect.Rotate(new Vector3(0, 90, 0));
         }
+    }
+
+    public void ShowCurrentScore()
+    {
+        currentScore.text = StaticData.GetScore().ToString();
+    }
+
+    private void CheckValidFormat()
+    {
+        if (PlayerPrefs.GetString("HighScore").Equals(""))
+        {
+            PlayerPrefs.SetString("HighScore", "|,|,|,|,|,|,|,|,|,|,");
+        }
+    }
+
+    public void ResetTopList()
+    {
+        PlayerPrefs.SetString("HighScore", "|,|,|,|,|,|,|,|,|,|,");
+        Start();
     }
 }

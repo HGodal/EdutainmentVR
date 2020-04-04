@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class ButtonListener : MonoBehaviour
@@ -9,10 +7,10 @@ public class ButtonListener : MonoBehaviour
 
     void Start()
     {
-        nameText = GameObject.Find("/ScoreCanvas/Panel/NameText").GetComponent<TextMeshProUGUI>();
+        nameText = GameObject.Find("/Canvases/ScoreCanvas/Panel/NameText").GetComponent<TextMeshProUGUI>();
     }
 
-    public void writeLetter()
+    public void WriteLetter()
     {
         if (this.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text == "<--")
         {

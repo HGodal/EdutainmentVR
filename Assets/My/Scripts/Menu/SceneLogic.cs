@@ -1,20 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class SceneLogic : MonoBehaviour
 {
-    public void randomLevel()
+    public void RandomLevel()
     {
-        int index = Random.Range(1, 2);
+        int index = Random.Range(2, 8);
         SceneManager.LoadScene(index);
     }
 
-    public void resetEveryThing(){
-        //Reset andre ting her også
-        StaticData.resetScores();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+    public void LoadScene(string desiredLevel)
+    {
+        SceneManager.LoadScene(desiredLevel, LoadSceneMode.Single);
     }
 
+    public void ResetEveryThing()
+    {
+        StaticData.ResetScores();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+    }
 }

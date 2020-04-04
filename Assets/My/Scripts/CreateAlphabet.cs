@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -15,7 +13,7 @@ public class CreateAlphabet : MonoBehaviour
 
     private void Start()
     {
-        root = GameObject.Find("/KeyboardCanvas/Panel");
+        root = GameObject.Find("/Canvases/KeyboardCanvas/Panel");
         alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ0";
 
         for (int i = 0; i < alphabet.Length; i++)

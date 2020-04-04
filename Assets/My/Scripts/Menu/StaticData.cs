@@ -5,7 +5,7 @@ public static class StaticData
     public static int[] levelScores = new int[6];
     private static int totalScore;
 
-    public static int getScore()
+    public static int GetScore()
     {
         totalScore = 0;
         foreach (int score in levelScores)
@@ -15,9 +15,8 @@ public static class StaticData
         return totalScore;
     }
 
-    public static void resetScores()
+    public static void ResetScores()
     {
         Array.Clear(levelScores, 0, levelScores.Length);
     }
 }
-
