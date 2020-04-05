@@ -39,7 +39,7 @@ public class ProgressOverview : MonoBehaviour
             GetComponent<TextMeshProUGUI>().text = "Gratulerer! \n\n" +
                 "Alle de ødelagte rørene er fikset, og vannet renner som det skal. \n\n" +
                 "Du vil bli teleportert tilbake til menyen om 5 sekund.";
-            commonLogic.WaitChangeScene(5.0f, "Menu");
+            commonLogic.WaitChangeScene(5.0f, "TheHub");
         }
         brokenPipes--;
     }
