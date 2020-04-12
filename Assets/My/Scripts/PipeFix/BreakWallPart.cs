@@ -27,7 +27,7 @@ public class BreakWallPart : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Hammer") && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() > 4.0f)
+        if (other.tag.Equals("Hammer") && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() > 4.0f && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() < 10.0f)
         {
             progress.UpdateScore(-1);
             sounds[0].Play();
