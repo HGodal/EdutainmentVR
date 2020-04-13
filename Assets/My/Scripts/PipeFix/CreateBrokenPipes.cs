@@ -9,6 +9,7 @@ public class CreateBrokenPipes : MonoBehaviour
     AudioSource tempSound;
     int numberOfBrokenPipes;
     ProgressOverview progress;
+    public GameObject puddle;
 
     private void Start()
     {
@@ -33,9 +34,18 @@ public class CreateBrokenPipes : MonoBehaviour
                 tempSound = item.gameObject.AddComponent<AudioSource>();
                 tempSound.clip = drippingSounds[Random.Range(0, drippingSounds.Length)].clip;
 
+                CreateLeakageIndicator(item.gameObject);
+
                 numberOfBrokenPipes++;
             }
         }
         progress.SetBrokenPipes(numberOfBrokenPipes);
+    }
+
+    private void CreateLeakageIndicator(GameObject brokenPipe)
+    {
+        GameObject newPuddle = Instantiate(puddle);
+        newPuddle.transform.parent = brokenPipe.transform;
+        newPuddle.transform.position = new Vector3(brokenPipe.transform.position.x, 0, brokenPipe.transform.position.z);
     }
 }

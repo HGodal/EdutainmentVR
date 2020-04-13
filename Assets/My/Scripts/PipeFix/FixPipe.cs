@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class FixPipe : MonoBehaviour
 {
@@ -26,6 +25,11 @@ public class FixPipe : MonoBehaviour
 
             Destroy(other.gameObject.GetComponent<DelayedSound>());
             Destroy(other.gameObject.GetComponent<AudioSource>());
+
+            foreach (Transform child in other.transform)
+            {
+                Destroy(child.gameObject);
+            }
         }
     }
 }
