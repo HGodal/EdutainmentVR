@@ -5,7 +5,7 @@ using TMPro;
 
 public class SnapZones : MonoBehaviour
 {
-
+    public GenerateJsonInfo jsonInfo;
     public TextMeshProUGUI text;
     public TextMeshProUGUI infoText;
 
@@ -52,12 +52,7 @@ public class SnapZones : MonoBehaviour
 
         pling = GetComponent<AudioSource>();
 
-        infoText.text = "Her må du koble sammen rørene på veggen til venstre for deg.\n" +
-                        "Det er plassert hindringer for å gjøre oppgaven litt vanskeligere.\n" +
-                        "Du må bruke knappene på høyre vegg for å lage rørene du trenger.\n\n" +
-                        "Det er om å gjøre å bruke så få rør som mulig.\n\n" +
-                        "Hvis det er umulig å koble rørene sammen eller at du har gjort feil,\n" +
-                        "kan du trykke på den røde knappen for å tilbakestille banen.";
+        infoText.text = jsonInfo.GetSceneInfo("pipeBuilder1");
 
         CreateStart();
     }
@@ -350,8 +345,7 @@ public class SnapZones : MonoBehaviour
         }
         tempList.Clear();
         StaticData.levelScores[1] = score;
-        infoText.text = "Gratulerer! Nå renner vannet slik det skal igjen. \n\n" +
-                        "Du bil tatt tilbake til hovedmenyen om 5 sekund.";
+        infoText.text = jsonInfo.GetSceneInfo("pipeBuilder2");
         logic.WaitChangeScene(5.0f, "Menu");
     }
 

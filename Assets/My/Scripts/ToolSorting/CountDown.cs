@@ -3,6 +3,7 @@ using TMPro;
 
 public class Countdown : MonoBehaviour
 {
+    public GenerateJsonInfo jsonInfo;
     private DisplayText displayText;
 
     public TextMeshProUGUI countdownText;
@@ -78,7 +79,7 @@ public class Countdown : MonoBehaviour
         {
             isPaused = true;
             coachWhistle.Play();
-            displayText.OverwriteText("Tiden er ute! Bedre lykke neste gang!\n\n\nDu vil bli teleportert tilbake til menyen om 5 sekund.");
+            displayText.OverwriteText(jsonInfo.GetSceneInfo("toolSorter3"));
             logic.GetComponent<CheckValidTools>().enabled = false;
 
             commonLogic.WaitChangeScene(5.0f, "TheHub");

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CheckValidTools : MonoBehaviour
 {
+    public GenerateJsonInfo jsonInfo;
     private DisplayText[] displayText;
     private CommonLogic commonLogic;
     private Countdown countDownTimer;
@@ -22,15 +23,7 @@ public class CheckValidTools : MonoBehaviour
         counter = 0;
         isActive = true;
 
-        string startString = "Finn alle verktøyene som hører til rørlegger-yrket \n" +
-            "og legg dem på bordet til høyre.\n\n" +
-            "Scoren kan du se på monitoren oppe til høyre.\n\n" +
-            "+1 poeng for riktig verktøy.\n" +
-            "-1 poeng for feil verktøy.\n\n\n" +
-            "Det finnes " + numOfCorrectItems + " riktige verktøy,\n" +
-            "se om du klarer å finne alle før tiden går ut!";
-
-        displayText[0].OverwriteText(startString);
+        displayText[0].OverwriteText(string.Format(jsonInfo.GetSceneInfo("toolSorter1"), numOfCorrectItems));
         displayText[1].OverwriteText(counter.ToString());
     }
 
@@ -73,7 +66,7 @@ public class CheckValidTools : MonoBehaviour
         if (counter >= numOfCorrectItems)
         {
             sounds[2].Play();
-            displayText[0].OverwriteText("Gratulerer! Du fant alle verktøyene!\n\n Du blir teleportert tilbake til menyen om 5 sekunder.");
+            displayText[0].OverwriteText(jsonInfo.GetSceneInfo("toolSorter2"));
             countDownTimer.isPaused = true;
             StaticData.levelScores[0] = Mathf.FloorToInt(countDownTimer.GetTimer());
             commonLogic.WaitChangeScene(5.0f, "TheHub");

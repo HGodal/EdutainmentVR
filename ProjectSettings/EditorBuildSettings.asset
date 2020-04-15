@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/My/Scenes/Rorlegging/RorFikser.unity
     guid: 111c5ee17fe6d487290203ec8a9f52b8
   - enabled: 0
+    path: Assets/My/Scenes/Ventilering/Vent3.unity
+    guid: 743b15a8ea786bf4c859cdf1531c0a68
+  - enabled: 0
     path: Assets/My/Scenes/Ikke i bruk/Menu 2.unity
     guid: 65e69b3f4e7cc43ccb7e01cd88063d07
   - enabled: 0
