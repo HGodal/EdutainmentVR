@@ -1,0 +1,10 @@
+{
+    "toolSorter": "TestText1",
+    "pipeBuilder": "TestText2",
+    "pipeFixer": "Bak veggen på venstre side er det noen rør som lekker, \nog du må fikse dem! \n\nBruk hammeren til å slå ned segmenter av veggen, og rørtangen \nfor å fikse de røde, ødelagte rørene. \n\n+10 poeng for å fikse et rør. \n-1 poeng for å ødelegge en bit av veggen.",
+
+    "quizList": [
+        "Element1",
+        "Element2"
+    ]
+}
