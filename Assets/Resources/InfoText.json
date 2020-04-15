@@ -1,7 +1,13 @@
 {
-    "toolSorter": "TestText1",
-    "pipeBuilder": "TestText2",
-    "pipeFixer": "Bak veggen på venstre side er det noen rør som lekker, \nog du må fikse dem! \n\nBruk hammeren til å slå ned segmenter av veggen, og rørtangen \nfor å fikse de røde, ødelagte rørene. \n\n+10 poeng for å fikse et rør. \n-1 poeng for å ødelegge en bit av veggen.",
+    "toolSorter1": "Finn alle verktøyene som hører til rørlegger-yrket \nog legg dem på bordet til høyre.\n\nScoren kan du se på monitoren oppe til høyre.\n\n+1 poeng for riktig verktøy.\n-1 poeng for feil verktøy.\n\n\nDet finnes {0} riktige verktøy,\nse om du klarer å finne alle før tiden går ut!",
+    "toolSorter2": "Gratulerer! Du fant alle verktøyene!\n\n Du blir teleportert tilbake til menyen om 5 sekunder.",
+    "toolSorter3": "Tiden er ute! Bedre lykke neste gang!\n\n\nDu vil bli teleportert tilbake til menyen om 5 sekund.",
+
+    "pipeBuilder1": "Her må du koble sammen rørene på veggen til venstre for deg.\nDet er plassert hindringer for å gjøre oppgaven litt vanskeligere.\nDu må bruke knappene på høyre vegg for å lage rørene du trenger.\n\nDet er om å gjøre å bruke så få rør som mulig.\n\nHvis det er umulig å koble rørene sammen eller at du har gjort feil,\nkan du trykke på den røde knappen for å tilbakestille banen.",
+    "pipeBuilder2": "Gratulerer! Nå renner vannet slik det skal igjen. \n\nDu bil tatt tilbake til hovedmenyen om 5 sekund.",
+
+    "pipeFixer1": "Bak veggen på venstre side er det noen rør som lekker, \nog du må fikse dem! \n\n{0} rør gjenstår! \n\nBruk hammeren til å slå ned segmenter av veggen, og rørtangen \nfor å fikse de røde, ødelagte rørene. \n\n+10 poeng for å fikse et rør. \n-1 poeng for å ødelegge en bit av veggen.",
+    "pipeFixer2": "Gratulerer! \n\nAlle de ødelagte rørene er fikset, og vannet renner som det skal. \n\nDu vil bli teleportert tilbake til menyen om 5 sekund.",
 
     "quizList": [
         "Element1",
