@@ -7,14 +7,20 @@ using System.IO;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class QuizManager : MonoBehaviour
 {
-    public Question[] questions;
-    private static List<Question> unanswerdQuestions;
+    //public Question[] questions;
+    //private static List<Question> unanswerdQuestions;
 
-    private Question currentQuestion;
+    //private Question currentQuestion;
 
+    public GenerateJsonInfo allInfo;
+
+    List<string> questions = new List<string>();
+    List<bool> answers = new List<bool>();
+    List<string> explanations = new List<string>();
     
     public TextMeshProUGUI questionText;
 
@@ -25,16 +31,30 @@ public class QuizManager : MonoBehaviour
 
     void Start()
     {
+        List<string> quiz = allInfo.GetSceneInfoList("quizen");
+
+        for (int i = 0; i < quiz.Count-2; i+=3)
+        {
+            questions.Add(quiz.ElementAt(i));
+            answers.Add(bool.Parse(quiz.ElementAt(i+1)));
+            explanations.Add(quiz.ElementAt(i+2));
+        }
+        
+        
+        ;
+        /*
         if (unanswerdQuestions == null || unanswerdQuestions.Count == 0)
         {
             unanswerdQuestions = questions.ToList<Question>();
         }
-
-        SetCurrentQuestion();
+        */
+        //SetCurrentQuestion();
         //Debug.Log(currentQuestion.question + " is " + currentQuestion.isTrue);
 
-        UserSelectFalse();
+        //UserSelectFalse();
     }
+
+    /*
 
     void SetCurrentQuestion()
     {
