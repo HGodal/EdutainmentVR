@@ -1,0 +1,10 @@
+﻿P:\Models For Turbosquid\Lg_Titan\Archive\t$m$p$$$\Lg_Titan v.max
+P:\Models For Turbosquid\Lg_Titan\Archive\t$m$p$$$\MAXFILES.TXT
+R:\Texture\hdri\hdrihaven\cayley_interior_2k.hdr
+P:\Old_Projects\Lg Titan\Textures\Invert_01.jpg
+P:\Old_Projects\Lg Titan\Textures\LG.jpg
+P:\Old_Projects\Lg Titan\Textures\Ple_01 copy.jpg
+P:\Old_Projects\Lg Titan\Textures\Barchasb_01.jpg
+P:\Old_Projects\Lg Titan\Textures\roof067.JPG
+P:\Old_Projects\Lg Titan\Textures\roof005.JPG
+P:\Old_Projects\Lg Titan\Textures\logo-lg.jpg
