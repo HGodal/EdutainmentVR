@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GenerateJsonInfo : MonoBehaviour
@@ -23,5 +24,10 @@ public class GenerateJsonInfo : MonoBehaviour
     public string GetSceneInfo(string scene)
     {
         return allInfo.GetType().GetField(scene).GetValue(allInfo).ToString();
+    }
+
+    public List<string> GetSceneInfoList(string scene)
+    {
+        return (List<string>) allInfo.GetType().GetField(scene).GetValue(allInfo);
     }
 }

@@ -10,6 +10,8 @@ public class JsonInfo
     public string pipeBuilder2;
     public string pipeFixer1;
     public string pipeFixer2;
-
+    public List<string> ventilationSteps;
     public List<string> quizList;
+    public string insideVentilationRules;
+    public string outsideVentilationRules;
 }

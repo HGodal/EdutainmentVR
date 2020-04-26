@@ -9,6 +9,17 @@
     "pipeFixer1": "Bak veggen på venstre side er det noen rør som lekker, \nog du må fikse dem! \n\n{0} rør gjenstår! \n\nBruk hammeren til å slå ned segmenter av veggen, og rørtangen \nfor å fikse de røde, ødelagte rørene. \n\n+10 poeng for å fikse et rør. \n-1 poeng for å ødelegge en bit av veggen.",
     "pipeFixer2": "Gratulerer! \n\nAlle de ødelagte rørene er fikset, og vannet renner som det skal. \n\nDu vil bli teleportert tilbake til menyen om 5 sekund.",
 
+    "ventilationSteps": [
+        "Her skal du sette opp både utedelen og innedelen til en varmepumpe. \n\nStart med å lukke alle dører og vindu. \n\nNår dette er gjort kan du trykke på knappen for neste trinn.",
+        "Oppi pappesken finner du innedelen av varmepumpen. \nDet vil være mange steder man kan plassere denne delen i huset. \n\nFølg punktene på veggen bak deg for å finne den beste plassen. \n\nNår dette er gjort kan du trykke på knappen for neste trinn.",
+        "Oppi pappesken ligger nå utedelen av varmepumpen. \nFinn den optimale plassen til denne ved hjelp av instruksene på veggen bak deg. \n\nNår dette er gjort kan du trykke på knappen for å fullføre spillet.",
+        "Gratulerer! \nDu blir snart tatt tilbake til hovedmenyen. \n\nPoengsum: \n{0} av {1} mulige!"
+    ],
+
+    "insideVentilationRules": "Inne-enheten: \n\n\nBør ha minst 15cm klaring ovenfor og ved sidene. \n\nBør være minst 2 meter over bakken. \n\nBør peke mot eventuelle sofagrupper.",
+    "outsideVentilationRules": "Ute-enheten: \n\nBør være nær inne-enheten, men ikke nærmere enn 30cm \n\nBør bli montert på en stødig og flat vegg. \n\nBør ikke bli påvirket av direkte sollys. Solen er plassert slik at den skinner på hovedinngangen og veggen til høyre for inngangen.",
+
+
     "quizList": [
         "Element1",
         "Element2"

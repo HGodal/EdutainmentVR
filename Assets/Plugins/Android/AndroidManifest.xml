@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:installLocation="auto">
     <uses-feature android:name="android.hardware.vr.headtracking" android:version="1" android:required="true" /><!-- Request the headset DoF mode -->
-    <!-- Request the headset handtracking mode -->
+    <uses-feature android:name="oculus.software.handtracking" android:required="false" /><uses-permission android:name="oculus.permission.handtracking" /><!-- Request the headset handtracking mode -->
     <application
         android:label="@string/app_name"
         android:icon="@mipmap/app_icon">
