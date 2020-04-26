@@ -1414,6 +1414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a25c97e9436743598d4674fd8554033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonInfo: {fileID: 0}
   countdownText: {fileID: 903369411383586089}
   timerDiff: 90
   countUp: 0
@@ -7651,7 +7652,7 @@ GameObject:
   - component: {fileID: 7808976818060481016}
   - component: {fileID: 2994600095116403332}
   - component: {fileID: 2029866795388448069}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Poke.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12044,7 +12045,7 @@ GameObject:
   - component: {fileID: 2742456979549944957}
   - component: {fileID: 3304326973355970070}
   - component: {fileID: 7143391963703423092}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Poke.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
