@@ -42,13 +42,13 @@ TagManager:
   - FingerPoke
   - WallBreak
   - FingerPokeButton
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Doorknob
+  - Door
+  - Valid
+  - In
+  - Out
+  - Fence
+  - FenceLight
   - 
   - 
   - 
