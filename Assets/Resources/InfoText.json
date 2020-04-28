@@ -17,5 +17,14 @@
     ],
 
     "insideVentilationRules": "Inne-enheten: \n\n\nBør ha minst 15cm klaring ovenfor og ved sidene. \n\nBør være minst 2 meter over bakken. \n\nBør peke mot eventuelle sofagrupper.",
-    "outsideVentilationRules": "Ute-enheten: \n\nBør være nær inne-enheten, men ikke nærmere enn 30cm \n\nBør bli montert på en stødig og flat vegg. \n\nBør ikke bli påvirket av direkte sollys. Solen er plassert slik at den skinner på hovedinngangen og veggen til høyre for inngangen."
+    "outsideVentilationRules": "Ute-enheten: \n\nBør være nær inne-enheten, men ikke nærmere enn 30cm \n\nBør bli montert på en stødig og flat vegg. \n\nBør ikke bli påvirket av direkte sollys. Solen er plassert slik at den skinner på hovedinngangen og veggen til høyre for inngangen.",
+
+	"ventSetup": "Ser ut som at ventilasjonen ikke er helt ferdig satt sammen, det gjør at viften ikke går på. \n\n Trykk på knappene i spillet for å gjøre ventilsjonen komplett. \n Det blir gitt 5 poeng for hver del som blir satt på plass.",
+	"ventSetup1": "Supert, du fikk satt alt på plass! Nå kan du skru på ventilasjonen",
+	"ventSetup2": "Gratulerer! Nå virker ventilasjonen, du vil bli teleportert til menyen om 8 sekunder"
+
+
+
+
+
 }
