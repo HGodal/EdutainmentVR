@@ -17,11 +17,5 @@
     ],
 
     "insideVentilationRules": "Inne-enheten: \n\n\nBør ha minst 15cm klaring ovenfor og ved sidene. \n\nBør være minst 2 meter over bakken. \n\nBør peke mot eventuelle sofagrupper.",
-    "outsideVentilationRules": "Ute-enheten: \n\nBør være nær inne-enheten, men ikke nærmere enn 30cm \n\nBør bli montert på en stødig og flat vegg. \n\nBør ikke bli påvirket av direkte sollys. Solen er plassert slik at den skinner på hovedinngangen og veggen til høyre for inngangen.",
-
-
-    "quizList": [
-        "Element1",
-        "Element2"
-    ]
+    "outsideVentilationRules": "Ute-enheten: \n\nBør være nær inne-enheten, men ikke nærmere enn 30cm \n\nBør bli montert på en stødig og flat vegg. \n\nBør ikke bli påvirket av direkte sollys. Solen er plassert slik at den skinner på hovedinngangen og veggen til høyre for inngangen."
 }

@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using VRTK.Prefabs.Interactions.Controllables;
-using UnityEngine.SceneManagement;
 using System.Linq;
-
 
 public class Progress : MonoBehaviour
 {
@@ -12,7 +8,7 @@ public class Progress : MonoBehaviour
     public AudioSource progressSound;
     public DisplayText text;
     public DisplayText score;
-    public DisplayText conPlacement;
+    public DisplayText airconditionInfo;
     GenerateJsonInfo generateJsonInfo;
     public GameObject inConGrab;
     public GameObject outConGrab;
@@ -27,7 +23,7 @@ public class Progress : MonoBehaviour
 
     void Start()
     {
-        conPlacement.GetComponent<DisplayText>().textObject.transform.parent.gameObject.SetActive(false);
+        airconditionInfo.GetComponent<DisplayText>().textObject.transform.parent.gameObject.SetActive(false);
         step = 0;
         openObjects = 6;
         validators = GameObject.Find("/Interactables/Validators");
@@ -75,7 +71,7 @@ public class Progress : MonoBehaviour
 
     public void CheckClosedObjects()
     {
-        //  Fullfører trinnet.
+        //  Fullfører gjeldende "step"
         int closedObjects = 0;
         foreach (Transform child in validators.transform)
         {
@@ -86,24 +82,24 @@ public class Progress : MonoBehaviour
         }
         UpdateScoreAndInfo((int)Mathf.Ceil((closedObjects * 30) / openObjects));
 
-        //  Setter opp neste trinn.
+        //  Gjør klart til neste "step"
         Instantiate(inConGrab);
-        conPlacement.GetComponent<DisplayText>().textObject.transform.parent.gameObject.SetActive(true);
-        conPlacement.OverwriteText(generateJsonInfo.GetSceneInfo("insideVentilationRules"));
+        airconditionInfo.GetComponent<DisplayText>().textObject.transform.parent.gameObject.SetActive(true);
+        airconditionInfo.OverwriteText(generateJsonInfo.GetSceneInfo("insideVentilationRules"));
     }
 
     private void CheckAirconditionInside()
     {
-        //  Fullfører trinnet.
+        //  Fullfører gjeldende "step"
         foreach (Transform snapZone in inConSnaps.transform)
         {
             if (snapZone.GetComponent<UsageStatus>().GetUsageStatus())
             {
                 UpdateScoreAndInfo(snapZone.GetComponent<InConStats>().CalculateScore());
 
-                //  Setter opp neste trinn.
+                //  Gjør klart til neste "step"
                 Instantiate(outConGrab);
-                conPlacement.OverwriteText(generateJsonInfo.GetSceneInfo("outsideVentilationRules"));
+                airconditionInfo.OverwriteText(generateJsonInfo.GetSceneInfo("outsideVentilationRules"));
                 return;
             }
         }
@@ -111,14 +107,14 @@ public class Progress : MonoBehaviour
 
     private void CheckAirconditionOutside()
     {
-        //  Fullfører trinnet
+        //  Fullfører gjeldende "step"
         foreach (Transform snapZone in outConSnaps.transform)
         {
             if (snapZone.GetComponent<UsageStatus>().GetUsageStatus())
             {
                 if (snapZone.GetComponent<OutConStats>().CalculateScore(inConSnaps) != -1)
                 {
-                    conPlacement.GetComponent<DisplayText>().textObject.transform.parent.gameObject.SetActive(false);
+                    airconditionInfo.GetComponent<DisplayText>().textObject.transform.parent.gameObject.SetActive(false);
                     UpdateScoreAndInfo(snapZone.GetComponent<OutConStats>().CalculateScore(inConSnaps));
 
                     victorySound.Play();

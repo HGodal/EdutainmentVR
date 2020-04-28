@@ -17,6 +17,10 @@ public class OutConStats : MonoBehaviour
                 {
                     return facingAwayFromSun * 20 + (30 - distance);
                 }
+                else
+                {
+                    return facingAwayFromSun * 20 + 5;
+                }
             }
         }
         return -1;
