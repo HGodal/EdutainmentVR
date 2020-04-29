@@ -30,11 +30,11 @@ public class ScoreView : MonoBehaviour
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventSetup");
         }
-        else if (score == 15)
+        else if (score >= 15 && score < 20)
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventSetup1");
         }
-        else if (score == 20)
+        else if (score >= 20)
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventSetup2");
             countDownTimer.isPaused = true;
