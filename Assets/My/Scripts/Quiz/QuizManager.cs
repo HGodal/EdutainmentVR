@@ -13,17 +13,12 @@ public class QuizManager : MonoBehaviour
 
     List<string> informationText;
 
-  
-
     DisplayText teksten;
     CommonLogic logic;
+
     private int step;
     private int score;
 
-    [SerializeField]
-    private float timeBetweenQuestion = 3f;
-
-    //private string gameDataFileName = "data.json";
 
     void Start()
     {
@@ -34,8 +29,6 @@ public class QuizManager : MonoBehaviour
         logic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
         teksten = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponent<DisplayText>();
         informationText = allInfo.GetSceneInfoList("quizList");
-        
-
     }
 
     private void Update()
@@ -45,7 +38,6 @@ public class QuizManager : MonoBehaviour
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("quiz");
             StaticData.levelScores[6] = score;
             logic.WaitChangeScene(5.0f, "TheHub");
-
         }
     }
     
@@ -54,27 +46,15 @@ public class QuizManager : MonoBehaviour
     {
         step++;
         teksten.OverwriteText(informationText.ElementAt(step));
-        step++;
-        
-       
-        
+        step++; 
     }
 
     public void ShowWhy()
     {
         teksten.OverwriteText(informationText.ElementAt(step));
-
     }
 
 
-    IEnumerator TransitionToNextQuestion ()
-    {
-    
-        yield return new WaitForSeconds(timeBetweenQuestion);
-
-    }
-
-    
     public void UserSelectTrue()
     {
         for (int i = 1; i < 100; i += 3)
@@ -94,7 +74,6 @@ public class QuizManager : MonoBehaviour
 
                 step++;
                 ShowWhy();
-                StartCoroutine(TransitionToNextQuestion());
             }
         }
     }
@@ -118,7 +97,6 @@ public class QuizManager : MonoBehaviour
 
                 step++;
                 ShowWhy();
-                StartCoroutine(TransitionToNextQuestion());
             }
         }
     }
