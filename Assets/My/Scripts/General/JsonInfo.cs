@@ -16,4 +16,7 @@ public class JsonInfo
     public List<string> ventilationSteps;
     public string insideVentilationRules;
     public string outsideVentilationRules;
+    
+    public List<string> quizList;
+    public string quiz;
 }

@@ -1,121 +1,132 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;
 using System.Linq;
-using System.IO;
-using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
-using System;
 
 public class QuizManager : MonoBehaviour
 {
-    //public Question[] questions;
-    //private static List<Question> unanswerdQuestions;
-
-    //private Question currentQuestion;
-
     public GenerateJsonInfo allInfo;
 
-    List<string> questions = new List<string>();
-    List<bool> answers = new List<bool>();
-    List<string> explanations = new List<string>();
-    
     public TextMeshProUGUI questionText;
+    TextMeshProUGUI scoreText;
+
+    List<string> informationText;
+
+  
+
+    DisplayText teksten;
+    CommonLogic logic;
+    private int step;
+    private int score;
 
     [SerializeField]
-    private float timeBetweenQuestion = 1f;
+    private float timeBetweenQuestion = 3f;
 
     //private string gameDataFileName = "data.json";
 
     void Start()
     {
-        List<string> quiz = allInfo.GetSceneInfoList("quizen");
-
-        for (int i = 0; i < quiz.Count-2; i+=3)
-        {
-            questions.Add(quiz.ElementAt(i));
-            answers.Add(bool.Parse(quiz.ElementAt(i+1)));
-            explanations.Add(quiz.ElementAt(i+2));
-        }
+        step = -1;
+        scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
+        score = 0;
+    
+        logic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
+        teksten = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponent<DisplayText>();
+        informationText = allInfo.GetSceneInfoList("quizList");
         
-        
-        ;
-        /*
-        if (unanswerdQuestions == null || unanswerdQuestions.Count == 0)
-        {
-            unanswerdQuestions = questions.ToList<Question>();
-        }
-        */
-        //SetCurrentQuestion();
-        //Debug.Log(currentQuestion.question + " is " + currentQuestion.isTrue);
 
-        //UserSelectFalse();
     }
 
-    /*
-
-    void SetCurrentQuestion()
+    private void Update()
     {
-        int randomQuestionIndex = Random.Range(0, unanswerdQuestions.Count);
-        currentQuestion = unanswerdQuestions[randomQuestionIndex];
+        if (step == 45)
+        {
+            GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("quiz");
+            StaticData.levelScores[6] = score;
+            logic.WaitChangeScene(5.0f, "TheHub");
 
-        questionText.text = currentQuestion.question;
-
+        }
+    }
+    
+  
+    public void NextQuestion()
+    {
+        step++;
+        teksten.OverwriteText(informationText.ElementAt(step));
+        step++;
+        
+       
         
     }
+
+    public void ShowWhy()
+    {
+        teksten.OverwriteText(informationText.ElementAt(step));
+
+    }
+
 
     IEnumerator TransitionToNextQuestion ()
     {
-        unanswerdQuestions.Remove(currentQuestion);
-
+    
         yield return new WaitForSeconds(timeBetweenQuestion);
 
-        //This will restart det scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    
     public void UserSelectTrue()
     {
-        if (currentQuestion.isTrue)
+        for (int i = 1; i < 100; i += 3)
         {
-            Debug.Log("CORRECT");
-        }
-        else
-        {
-            Debug.Log("FALSE");
-            
-        }
+            if (i == step)
+            {
+                if (informationText.ElementAt(step) == "True")
+                {
+                    Debug.Log("CORRECT");
+                    UpdateScore(1);
+                }
+                else
+                {
+                    Debug.Log("FALSE");
+                    UpdateScore(0);
+                }
 
-        StartCoroutine(TransitionToNextQuestion());
+                step++;
+                ShowWhy();
+                StartCoroutine(TransitionToNextQuestion());
+            }
+        }
     }
 
     public void UserSelectFalse()
     {
-        if (!currentQuestion.isTrue) 
+        for (int i = 1; i < 100; i += 3)
         {
-            Debug.Log("CORRECT");
-        }
-        else
-        {
-            Debug.Log("FALSE");
-            
-        }
+            if (i == step)
+            {
+                if (informationText.ElementAt(step) == "False")
+                {
+                    Debug.Log("CORRECT");
+                    UpdateScore(1);
+                }
+                else
+                {
+                    Debug.Log("FALSE");
+                    UpdateScore(0);
+                }
 
-        StartCoroutine(TransitionToNextQuestion());
+                step++;
+                ShowWhy();
+                StartCoroutine(TransitionToNextQuestion());
+            }
+        }
     }
 
-    /*
-    private void LoadGameData()
+    public void UpdateScore(int value)
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName); 
-
-        if (File.Exists(filePath))
-        {
-            string dataAsJson = File.ReadAllText(filePath);
-            GameData loadedData 
-        }
+        score += value;
+        scoreText.text = score.ToString();
     }
-    */
+
 }
