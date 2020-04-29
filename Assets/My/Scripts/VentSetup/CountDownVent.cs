@@ -27,6 +27,7 @@ public class CountDownVent : MonoBehaviour
     {
         displayText = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponent<DisplayText>();
 
+
         logic = GameObject.Find("/Logic");
         commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
 
@@ -79,9 +80,7 @@ public class CountDownVent : MonoBehaviour
         {
             isPaused = true;
             coachWhistle.Play();
-            displayText.OverwriteText(jsonInfo.GetSceneInfo("ventSetup1"));
-            logic.GetComponent<CheckValidTools>().enabled = false;
-
+            displayText.OverwriteText(jsonInfo.GetSceneInfo("ventSetup3"));
             commonLogic.WaitChangeScene(5.0f, "TheHub");
         }
     }

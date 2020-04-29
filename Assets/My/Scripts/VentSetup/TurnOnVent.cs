@@ -4,7 +4,7 @@ using TMPro;
 public class TurnOnVent : MonoBehaviour
 {
     private GameObject hinge;
-    private GameObject Vent1;
+    private GameObject vent1;
     private GameObject close;
 
     ScoreView progress;
@@ -22,7 +22,7 @@ public class TurnOnVent : MonoBehaviour
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreView>();
 
         hinge = GameObject.Find("/VentA");
-        Vent1 = GameObject.Find("/Vent1");
+        vent1 = GameObject.Find("/Vent1");
         close = GameObject.Find("/SluttVent");
     }
 
@@ -47,15 +47,12 @@ public class TurnOnVent : MonoBehaviour
         //må sjekke om alt er på riktig plass før ventilasjon kan bli skrudd på
         if (close.transform.rotation == Quaternion.Euler(0, 90, 0))
         {
-            if (Vent1.transform.position == test1)
+            if (vent1.transform.position == test1 && hinge.transform.position == test)
             {
-                if (hinge.transform.position == test)
-                {
                     ventilation.Play();
                     progress.UpdateScore(5);
                     progress.WriteInfoText(); 
                     
-                }
             }
         }
     }

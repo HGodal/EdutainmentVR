@@ -10,7 +10,6 @@ public class ChangeRotation : MonoBehaviour
     void Start()
     {
         close = GameObject.Find("/SluttVent");
-
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreView>();
 
     }

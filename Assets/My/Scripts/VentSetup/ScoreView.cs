@@ -22,7 +22,6 @@ public class ScoreView : MonoBehaviour
         commonLogic = GameObject.Find("/CommonLogic").GetComponent<CommonLogic>();
 
         WriteInfoText();
-        Debug.Log(score);
     }
 
     public void WriteInfoText()

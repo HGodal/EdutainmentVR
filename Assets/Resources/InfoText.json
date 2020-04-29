@@ -21,7 +21,8 @@
 
 	"ventSetup": "Ser ut som at ventilasjonen ikke er helt ferdig satt sammen, det gjør at viften ikke går på. \n\n Trykk på knappene i spillet for å gjøre ventilsjonen komplett. \n Det blir gitt 5 poeng for hver del som blir satt på plass.",
 	"ventSetup1": "Supert, du fikk satt alt på plass! Nå kan du skru på ventilasjonen",
-	"ventSetup2": "Gratulerer! Nå virker ventilasjonen, du vil bli teleportert til menyen om 8 sekunder"
+	"ventSetup2": "Gratulerer! Nå virker ventilasjonen, du vil bli teleportert til menyen om 8 sekunder",
+	"ventSetup3": "Tiden er ute, du blir teleportert til menyen om 5 sekunder"
 
 
 
