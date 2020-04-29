@@ -62,13 +62,11 @@ public class QuizManager : MonoBehaviour
             if (i == step)
             {
                 if (informationText.ElementAt(step) == "True")
-                {
-                    Debug.Log("CORRECT");
+                {               
                     UpdateScore(1);
                 }
                 else
                 {
-                    Debug.Log("FALSE");
                     UpdateScore(0);
                 }
 
@@ -86,12 +84,10 @@ public class QuizManager : MonoBehaviour
             {
                 if (informationText.ElementAt(step) == "False")
                 {
-                    Debug.Log("CORRECT");
                     UpdateScore(1);
                 }
                 else
                 {
-                    Debug.Log("FALSE");
                     UpdateScore(0);
                 }
 
