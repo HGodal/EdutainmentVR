@@ -16,13 +16,9 @@ public class changePos : MonoBehaviour
 
     public void ChangeVent()
     {
-        
             vent1.transform.position = new Vector3(-2.317f, 2.202f, -2.82f);
             progress.UpdateScore(5);
             progress.WriteInfoText();
-        
-            
- 
     }
 
    
