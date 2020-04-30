@@ -19,13 +19,58 @@
     "insideVentilationRules": "Inne-enheten: \n\n\nBør ha minst 15cm klaring ovenfor og ved sidene. \n\nBør være minst 2 meter over bakken. \n\nBør peke mot eventuelle sofagrupper.",
     "outsideVentilationRules": "Ute-enheten: \n\nBør være nær inne-enheten, men ikke nærmere enn 30cm \n\nBør bli montert på en stødig og flat vegg. \n\nBør ikke bli påvirket av direkte sollys. Solen er plassert slik at den skinner på hovedinngangen og veggen til høyre for inngangen.",
 
+    "quizList": [
+        "Rørlegging er kult?",
+        "True",
+		"Selvfølgelig er det kult.",
+		"Ventilering er kult?",
+		"True",
+		"Selvfølgelig er det kult.",
+		"Bruker man vanlig sag i rørlegging?",
+		"False",
+		"Man bruker ikke vanlig sag, men en baufil.",
+		"Tar det Normalt 2 år å utdanne seg som rørlegger?",
+		"False",
+		"Det tar vanligvis rundt 4,5 år å utdanne seg som rørlegger.",
+		"Brukes rørsaks til kapping av PEL/PEM rør ved skjøting av Speedfit eller Plasim?",
+		"True",
+		"Rørsakt brukes to nettopp dette.",
+		"Er Brødrene Dahl den største grossisten innen rørbransjen?",
+		"True",
+		"Brødrene Dahl er den største grossisten innenfor rørbransjen.",
+		"Kalles et rør-i-rør-system for en 'union' for en rørlegger?",
+		"False",
+		"En union i rørfaget er en overgang fra et rør til noe annet.",
+		"Må du ha avlagt svenneprøven i rørfaget for å kunne starte på utdanningen som gjør deg til rørleggermester?",
+		"True",
+		"Du er nødt til å avalgt svenneprøven for å kunne bli rørleggermester.",
+		"Er 500mm minimum avstand fra vegg til slukkant på standard sluk?",
+		"False",
+		"Minimum avstand fra vegg til slukkant er 300mm, ikke 500mm.",
+		"Brukes en drill når man jobber med Ventilasjon?",
+		"True",
+		"Man bruker drill til mange yrker, også i ventilering",
+		"Er det 5 forskjellige ventilasjons typer?",
+		"False",
+		"Det er idag 3 forskjellige typer for ventilasjon",
+		"Sikrer naturlig ventilasjon et godt inneklima i alle rom året rundt?",
+		"False",
+		"Naturlig ventilasjon sikrer ikke dette, men balansert ventilasjon gjør det.",
+		"Kan en varmepumpe ha en levetid på 15 år?",
+		"True",
+		"En luft-til-luft varmepumpe tilpasset nordisk klima har levetid på 12-15 år.",
+		"Er ventilasjonteknikk et eget lærefag?",
+		"True",
+		"Ventilasjonteknikk ble et nytt lærefag fra og med 2020.",
+		"Det finnes bare luft-til-luft og luft-til-vann varmepumper?",
+		"False",
+		"Det finnes faktisk 6 forskjellige typer varmepumper idag."
+    ],
+
+	"quiz": "Du har flullført alle spørsmålene og blir teleportert tilbake til menyen om 5 sekunder"
+
 	"ventSetup": "Ser ut som at ventilasjonen ikke er helt ferdig satt sammen, det gjør at viften ikke går på. \n\n Trykk på knappene i spillet for å gjøre ventilsjonen komplett. \n Det blir gitt 5 poeng for hver del som blir satt på plass.",
 	"ventSetup1": "Supert, du fikk satt alt på plass! Nå kan du skru på ventilasjonen",
 	"ventSetup2": "Gratulerer! Nå virker ventilasjonen, du vil bli teleportert til menyen om 8 sekunder",
 	"ventSetup3": "Tiden er ute, du blir teleportert til menyen om 5 sekunder"
-
-
-
-
-
 }
