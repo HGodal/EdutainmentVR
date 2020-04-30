@@ -19,4 +19,9 @@ public class JsonInfo
     
     public List<string> quizList;
     public string quiz;
+
+    public string ventSetup;
+    public string ventSetup1;
+    public string ventSetup2;
+    public string ventSetup3;
 }
