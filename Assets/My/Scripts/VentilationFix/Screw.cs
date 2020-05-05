@@ -11,30 +11,19 @@ public class Screw : MonoBehaviour
 
     private void Start()
     {
-
         bolts = GameObject.Find("/Bolts/SkrueLogikk").GetComponent<BoltAction>();
 
         AudioSource drill = gameObject.AddComponent<AudioSource>();
         drill.clip = Resources.Load("Correct") as AudioClip;
         drill.playOnAwake = false;
-
-        
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag.Equals("Drill"))
         {
-            bolts.Screws();
-
-            //lyden virker ikke helt enda
+            bolts.Screws(); 
             drill.Play();
         }
-
-    }
-
-    private void Update()
-    {
-        //bolts.Screws();
     }
 }

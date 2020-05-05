@@ -18,10 +18,7 @@ public class TurnOnPower2 : MonoBehaviour
     {
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
         progress.WriteInfoText();
-
-
     }
-
 
     public void TurnOnPower()
     {

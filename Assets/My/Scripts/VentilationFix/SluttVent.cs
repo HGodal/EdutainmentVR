@@ -10,20 +10,13 @@ public class SluttVent : MonoBehaviour
 
     ScoreCounter progress;
     
-
-
     private void Start()
     {
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
-    
-        //makeNewVent();
-
     }
-
 
     public void makeNewVent()
     {
-
         Transform v = Instantiate(ventilPrefab);
         v.position = spawnPoint.position;
 

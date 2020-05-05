@@ -18,12 +18,9 @@ public class ScoreCounter : MonoBehaviour
         score = 0;
         victory = GetComponent<AudioSource>();
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
-        commonLogic = GameObject.Find("/CommonLogic").GetComponent<CommonLogic>();
+        commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
 
         WriteInfoText();
-        
-
-
     }
 
     public void WriteInfoText()
@@ -37,24 +34,17 @@ public class ScoreCounter : MonoBehaviour
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventFixer2");
         }
         
-        else if (score == 4)
+        else if (score >= 4 && score < 10)
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventFixer3");
         }
-        else if (score == 10)
+        else if (score >= 10)
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventFixer4");
-        }
-        else if (score == 15)
-        {
-            GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventFixer5");
             StaticData.levelScores[4] = score;
             commonLogic.WaitChangeScene(5.0f, "TheHub");
         }
-        
-        
     }
-
 
     public void UpdateScore(int value)
     {

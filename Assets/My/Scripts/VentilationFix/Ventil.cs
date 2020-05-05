@@ -20,10 +20,8 @@ private void Start()
 
         bolts = GameObject.Find("/Bolts/SkrueLogikk").GetComponent<BoltAction>();
 
-        
     }
 
-    
     private void OnTriggerExit(Collider other)
     {
         //check if the screw is out
@@ -32,12 +30,7 @@ private void Start()
             bolts.Unscrewed();
             Free();
         }
-       
-        //check if the last screw is out
-        
     }
-
-  
 
     //makes new vent when player touch with pipewrench
     private void OnTriggerEnter(Collider other)
@@ -46,9 +39,6 @@ private void Start()
         {
             Destroy(gameObject);
             sluttevent.makeNewVent();
-            //progress.UpdateScore(5);
-            progress.WriteInfoText();
-            
         }
     }
 
@@ -58,8 +48,6 @@ private void Start()
         gameObject.GetComponent<BoxCollider>().isTrigger = false;
 
         gameObject.GetComponent<Renderer>().material = red;
-
-        //progress.UpdateScore(2);
 
         progress.WriteInfoText();
     }

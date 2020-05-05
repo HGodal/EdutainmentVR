@@ -9,7 +9,7 @@ public class TurnOnPower : MonoBehaviour
     public Material green;
     public GameObject ebox1;
     public GameObject ebox3;
-    int counter;
+
     ScoreCounter progress;
     private bool rod = false;
 
@@ -17,8 +17,7 @@ public class TurnOnPower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
-        
+        progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();    
     }
 
     public void TurnOn()
