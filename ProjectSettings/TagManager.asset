@@ -19,6 +19,9 @@ TagManager:
   - PipeWrench
   - UpPipe
   - DownPipe
+  - Ventil
+  - Screw
+  - Drill
   layers:
   - Default
   - TransparentFX

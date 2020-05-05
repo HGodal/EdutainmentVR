@@ -24,4 +24,11 @@ public class JsonInfo
     public string ventSetup1;
     public string ventSetup2;
     public string ventSetup3;
+
+    public string ventFixer1;
+    public string ventFixer2;
+    public string ventFixer3;
+    public string ventFixer4;
+    public string ventFixer5;
+
 }
