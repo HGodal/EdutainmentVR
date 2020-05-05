@@ -3,7 +3,6 @@ using TMPro;
 
 public class ScoreView : MonoBehaviour
 {
-    bool finished;
     int score;
    
     TextMeshProUGUI scoreText;
@@ -15,7 +14,6 @@ public class ScoreView : MonoBehaviour
     private void Start()
     {
         countDownTimer = GameObject.Find("CountDown").GetComponent<Countdown>();
-        finished = false;
         score = 0;
         
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
@@ -42,7 +40,6 @@ public class ScoreView : MonoBehaviour
             commonLogic.WaitChangeScene(8.0f, "TheHub");
         }
     }
-
 
     public void UpdateScore(int value)
     {

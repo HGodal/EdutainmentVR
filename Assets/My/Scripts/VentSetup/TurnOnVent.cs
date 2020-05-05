@@ -8,36 +8,17 @@ public class TurnOnVent : MonoBehaviour
     private GameObject close;
 
     ScoreView progress;
-
     AudioSource ventilation;
-    
-    bool play;
 
     private void Start()
     {
         ventilation = GetComponent<AudioSource>();
-        
-        
 
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreView>();
 
         hinge = GameObject.Find("/VentA");
         vent1 = GameObject.Find("/Vent1");
         close = GameObject.Find("/SluttVent");
-    }
-
-    
-
-    private void Update()
-    {
-        if (play == true)
-        {
-            ventilation.Play();
-        }
-        if (play == false)
-        {
-            ventilation.Stop();
-        }
     }
 
     public void TurnOn()

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class changePos : MonoBehaviour
+public class ChangePos : MonoBehaviour
 {
     ScoreView progress;
-    
     private GameObject vent1;
 
     private void Start()
@@ -20,8 +19,4 @@ public class changePos : MonoBehaviour
             progress.UpdateScore(5);
             progress.WriteInfoText();
     }
-
-   
-
-
 }

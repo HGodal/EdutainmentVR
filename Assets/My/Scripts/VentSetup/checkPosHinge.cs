@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class checkPosHinge : MonoBehaviour
+public class CheckPosHinge : MonoBehaviour
 {
-
     private GameObject hinge;
-
     ScoreView progress;
 
     private void Start()
@@ -14,7 +12,6 @@ public class checkPosHinge : MonoBehaviour
         hinge = GameObject.Find("/VentA");
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreView>();
     }
-
 
     public void ChangeHinge()
     {

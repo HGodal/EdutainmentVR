@@ -19,7 +19,8 @@ public class QuizManager : MonoBehaviour
     private int step;
     private int score;
 
-
+    AudioSource[] sounds;
+    
     void Start()
     {
         step = -1;
@@ -29,6 +30,8 @@ public class QuizManager : MonoBehaviour
         logic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
         teksten = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponent<DisplayText>();
         informationText = allInfo.GetSceneInfoList("quizList");
+
+        sounds = GetComponents<AudioSource>();
     }
 
     private void Update()
@@ -64,10 +67,12 @@ public class QuizManager : MonoBehaviour
                 if (informationText.ElementAt(step) == "True")
                 {               
                     UpdateScore(1);
+                    sounds[0].Play();
                 }
                 else
                 {
                     UpdateScore(0);
+                    sounds[1].Play();
                 }
 
                 step++;
@@ -85,10 +90,12 @@ public class QuizManager : MonoBehaviour
                 if (informationText.ElementAt(step) == "False")
                 {
                     UpdateScore(1);
+                    sounds[0].Play();
                 }
                 else
                 {
                     UpdateScore(0);
+                    sounds[1].Play();
                 }
 
                 step++;

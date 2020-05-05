@@ -11,16 +11,19 @@ public class BoltAction : MonoBehaviour
     private SluttVent sluttvent;
 
     int number;
-    private bool unscrewed = true;
+    private bool unscrewed = false;
     public GameObject screwPrefab;
 
     ScoreCounter progress;
     private GameObject skrue0;
 
+    AudioSource drilling;
+
     private void Start()
     {
         sluttvent = GameObject.Find("/VentilLogikk").GetComponent<SluttVent>();
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
+        drilling = GetComponent<AudioSource>();
 
         number = 0;   
 
@@ -65,8 +68,10 @@ public class BoltAction : MonoBehaviour
             return;
         }
 
+        drilling.Play();
         skrue0.transform.Translate(new Vector3(0f, 0f, speed * Time.deltaTime));
         skrue0.transform.Rotate(new Vector3(0f, 0f, 90 * Time.deltaTime));
+
     }
 
     public void Unscrewed()
@@ -82,4 +87,5 @@ public class BoltAction : MonoBehaviour
         progress.WriteInfoText();
        
     }
+
 }
