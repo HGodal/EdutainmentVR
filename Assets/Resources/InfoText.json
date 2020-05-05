@@ -72,5 +72,11 @@
 	"ventSetup": "Ser ut som at ventilasjonen ikke er helt ferdig satt sammen, det gjør at viften ikke går på. \n\n Trykk på knappene i spillet for å gjøre ventilsjonen komplett. \n Det blir gitt 5 poeng for hver del som blir satt på plass.",
 	"ventSetup1": "Supert, du fikk satt alt på plass! Nå kan du skru på ventilasjonen",
 	"ventSetup2": "Gratulerer! Nå virker ventilasjonen, du vil bli teleportert til menyen om 8 sekunder",
-	"ventSetup3": "Tiden er ute, du blir teleportert til menyen om 5 sekunder"
+	"ventSetup3": "Tiden er ute, du blir teleportert til menyen om 5 sekunder",
+
+	"ventFixer1": "Ser ut til at strømmen har gått for ventilasjonen! \n Du må fikse det slik at du kan skru på ventilasjonen igjen. \n\n Det er viktig at du skrur på i rikitg rekkefølge, \n slik at det ikke blir en kortsluttning. \n\n Følg kablene på bakken for å se hvilken knapp du skal trykke på. \n\n Klarer du alt får du 2 ektrapoeng",
+	"ventFixer2": "Gratulerer! \n\n Du fikk satt på strømmen i riktig rekkefølge. \n\n Du må nå gå bort til ventildelen. /n Det er noe feil med enden på ventilen, denne må du skru av med drillen.",
+	"ventFixer3": "Flott, du fikk av den ødelagte delen! \n Denne delen må du fikse med pipenøkkelen",
+	"ventFixer4": "Gratulerer, du fikk fikset ventildele! Nå gjenstår bare å sette den på plass der den skal være.",
+	"ventFixer5": "Gratulerer, denne ventilen er klar til bruk! Du blir teleportert tilbake til hovedmenyen om 5 sekunder."
 }

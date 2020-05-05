@@ -7,17 +7,15 @@ public class SluttVent : MonoBehaviour
   
     public Transform ventilPrefab;
     public Transform spawnPoint;
-    
 
     ScoreCounter progress;
-    Screw screws;
+    
 
 
     private void Start()
     {
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
-        screws = GameObject.Find("Screws").GetComponent<Screw>();
-
+    
         //makeNewVent();
 
     }

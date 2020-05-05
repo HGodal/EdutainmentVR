@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Screw : MonoBehaviour
 {
-
     private float screwOffset = 0.075f;
     AudioSource drill;
     private bool unscrewed = false;
     BoltAction bolts;
-
 
     private void Start()
     {
@@ -23,8 +21,6 @@ public class Screw : MonoBehaviour
         
     }
 
-    
-
     private void OnTriggerStay(Collider other)
     {
         if (other.tag.Equals("Drill"))
@@ -36,7 +32,6 @@ public class Screw : MonoBehaviour
         }
 
     }
-
 
     private void Update()
     {

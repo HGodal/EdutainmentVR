@@ -57,7 +57,7 @@ public class BoltAction : MonoBehaviour
             GameObject newScrew = Instantiate(screwPrefab) as GameObject;
             newScrew.transform.parent = GameObject.Find("/Bolts").transform;
             //posY vil ikke endre seg, alle skruene kommer på samme plass
-            newScrew.transform.position = new Vector3(0.3127f, 0.9896f - posY, -2.2345f);
+            newScrew.transform.position = new Vector3(0.3347f, 0.863f - posY, -2.3685f);
             newScrew.transform.rotation = Quaternion.Euler(0, 0, 0);
             newScrew.AddComponent<Screw>();
 
