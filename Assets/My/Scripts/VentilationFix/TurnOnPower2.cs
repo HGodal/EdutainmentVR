@@ -22,7 +22,7 @@ public class TurnOnPower2 : MonoBehaviour
 
     public void TurnOnPower()
     {
-        if (rod2 == false)
+        if (!rod2)
         {
             ebox2.GetComponent<Renderer>().material = green;
             progress.UpdateScore(1);

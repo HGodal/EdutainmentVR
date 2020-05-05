@@ -23,7 +23,7 @@ public class TurnOnPower3 : MonoBehaviour
 
     public void TurnOnPower()
     {
-        if (rod3 == false)
+        if (!rod3)
         {
             ebox3.GetComponent<Renderer>().material = green;
             // set next ebox to be red

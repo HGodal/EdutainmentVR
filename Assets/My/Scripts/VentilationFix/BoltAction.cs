@@ -11,7 +11,7 @@ public class BoltAction : MonoBehaviour
     private SluttVent sluttvent;
 
     int number;
-    private bool unscrewed = false;
+    private bool unscrewed = true;
     public GameObject screwPrefab;
 
     ScoreCounter progress;
@@ -19,8 +19,6 @@ public class BoltAction : MonoBehaviour
 
     private void Start()
     {
-        
-        //bolt = GameObject.Find("/Bolts/Screw");
         sluttvent = GameObject.Find("/VentilLogikk").GetComponent<SluttVent>();
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
 
@@ -39,7 +37,7 @@ public class BoltAction : MonoBehaviour
         {
             GameObject newScrew = Instantiate(screwPrefab) as GameObject;
             newScrew.transform.parent = GameObject.Find("/Bolts").transform;
-            //posY vil ikke endre seg, alle skruene kommer på samme plass
+
             newScrew.transform.position = new Vector3(0.3347f, 0.863f - posY, -2.3685f);
             newScrew.transform.rotation = Quaternion.Euler(0, 0, 0);
             newScrew.AddComponent<Screw>();
@@ -54,7 +52,6 @@ public class BoltAction : MonoBehaviour
             newScrew.gameObject.AddComponent<BoxCollider>();
             newScrew.gameObject.GetComponent<BoxCollider>().isTrigger = true;
             
-            //legger på posY, men ser ikke ut til å vike 
             posY += 0.4f;
         }
        
@@ -63,7 +60,7 @@ public class BoltAction : MonoBehaviour
     public void Screws()
     {
         //check if the screw is out
-        if (unscrewed == true)
+        if (unscrewed)
         {
             return;
         }
@@ -85,11 +82,4 @@ public class BoltAction : MonoBehaviour
         progress.WriteInfoText();
        
     }
-
-
-
-
-
-
-
 }

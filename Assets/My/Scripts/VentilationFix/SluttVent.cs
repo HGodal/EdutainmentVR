@@ -29,10 +29,5 @@ public class SluttVent : MonoBehaviour
         progress.WriteInfoText();
 
     }
-
-
-
-    
-
 }
 
