@@ -6,32 +6,41 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/My/Scenes/TheHub.unity
+    guid: 6e64bbc983ef75e42bad8e54bd72f848
+  - enabled: 1
+    path: Assets/My/Scenes/LagreScore.unity
+    guid: be0877c7c0e7730439b46b8d179d6f58
+  - enabled: 1
+    path: Assets/My/Scenes/Rorlegging/VerktoySortering.unity
+    guid: 984eea4d38fe342e099a15782bba002d
+  - enabled: 1
+    path: Assets/My/Scenes/Rorlegging/RorBygger.unity
+    guid: 2cdbe45628721a943afe2114d77c7746
+  - enabled: 1
+    path: Assets/My/Scenes/Rorlegging/RorFikser.unity
+    guid: 111c5ee17fe6d487290203ec8a9f52b8
+  - enabled: 1
+    path: Assets/My/Scenes/Ventilering/VentilationSetup.unity
+    guid: a1c10868362af4339aab6fc5c62b3400
+  - enabled: 1
+    path: Assets/My/Scenes/Ventilering/VentilationFixer.unity
+    guid: 61f3b528b2e1b5e409847291c03f8f0c
+  - enabled: 1
     path: Assets/My/Scenes/Ventilering/AirCondition.unity
     guid: 878a5b69c8f28714d9a3121313da723e
+  - enabled: 1
+    path: Assets/My/Scenes/Quiz/Quiz.unity
+    guid: 65f69d65820ba84439a707800ea42823
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/My/Scenes/Ventilering/Ventilation3.unity
-    guid: a5ab66abb6bb79a41b46dc0116d4b468
-  - enabled: 1
-    path: Assets/My/Scenes/TheHub.unity
-    guid: 6e64bbc983ef75e42bad8e54bd72f848
-  - enabled: 0
-    path: Assets/My/Scenes/LagreScore.unity
-    guid: be0877c7c0e7730439b46b8d179d6f58
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/My/Scenes/UkjentNavn.unity
     guid: 6aae192d5f8a4a34ab278ce4417d4e39
-  - enabled: 0
-    path: Assets/My/Scenes/Rorlegging/VerktoySortering.unity
-    guid: 984eea4d38fe342e099a15782bba002d
-  - enabled: 0
-    path: Assets/My/Scenes/Rorlegging/RorBygger.unity
-    guid: 2cdbe45628721a943afe2114d77c7746
-  - enabled: 0
-    path: Assets/My/Scenes/Rorlegging/RorFikser.unity
-    guid: 111c5ee17fe6d487290203ec8a9f52b8
   - enabled: 0
     path: Assets/My/Scenes/Ikke i bruk/Menu 2.unity
     guid: 65e69b3f4e7cc43ccb7e01cd88063d07
