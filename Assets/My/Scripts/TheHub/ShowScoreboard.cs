@@ -15,7 +15,7 @@ public class ShowScoreboard : MonoBehaviour
 
         CheckValidFormat();
 
-        string[,] scoreTest = ScoreLogic.StringToList(PlayerPrefs.GetString("HighScore"));
+        string[,] score = ScoreLogic.StringToList(PlayerPrefs.GetString("HighScore"));
 
         for (int i = 0; i < 10; i++)
         {
@@ -24,7 +24,7 @@ public class ShowScoreboard : MonoBehaviour
 
             GameObject newPanel = Instantiate(scorePanel);
             newPanel.transform.SetParent(GameObject.Find("/Canvases/HighScoreCanvas/HighScorePanel").transform);
-            newPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i + 1).ToString() + ". " + scoreTest[i, 0] + " " + scoreTest[i, 1];
+            newPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i + 1).ToString() + ". " + score[i, 0] + " " + score[i, 1];
             newPanel.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 
             RectTransform rect = newPanel.GetComponent<RectTransform>();
