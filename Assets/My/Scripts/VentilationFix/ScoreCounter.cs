@@ -13,7 +13,6 @@ public class ScoreCounter : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(allInfo.GetSceneInfo("ventFixer1"));
         finished = false;
         score = 0;
         victory = GetComponent<AudioSource>();
