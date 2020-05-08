@@ -17,7 +17,7 @@ public class ScoreView : MonoBehaviour
         score = 0;
         
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
-        commonLogic = GameObject.Find("/CommonLogic").GetComponent<CommonLogic>();
+        commonLogic = GameObject.Find("RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
 
         WriteInfoText();
     }
