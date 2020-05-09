@@ -30,7 +30,7 @@ public class ProgressOverview : MonoBehaviour
         {
             victory.Play();
             finished = true;
-            StaticData.levelScores[3] = score;
+            StaticData.levelScores[2] = score;
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("pipeFixer2");
             commonLogic.WaitChangeScene(5.0f, "TheHub");
         }

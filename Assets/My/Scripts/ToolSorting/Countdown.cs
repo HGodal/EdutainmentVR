@@ -80,7 +80,7 @@ public class Countdown : MonoBehaviour
             isPaused = true;
             coachWhistle.Play();
             displayText.OverwriteText(jsonInfo.GetSceneInfo("toolSorter3"));
-            logic.GetComponent<CheckValidTools>().enabled = false;
+            //logic.GetComponent<CheckValidTools>().enabled = false;  //  Denne burde ikke vært her
 
             commonLogic.WaitChangeScene(5.0f, "TheHub");
         }

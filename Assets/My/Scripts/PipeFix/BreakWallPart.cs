@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+﻿using UnityEngine;
 
 public class BreakWallPart : MonoBehaviour
 {
@@ -9,7 +6,6 @@ public class BreakWallPart : MonoBehaviour
     float width;
     float depth;
     GameObject wallGrid;
-
     ProgressOverview progress;
     AudioSource[] sounds;
 
@@ -21,7 +17,7 @@ public class BreakWallPart : MonoBehaviour
         depth = 0.03f;
         wallGrid = transform.parent.gameObject;
 
-       progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ProgressOverview>();
+        progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ProgressOverview>();
         sounds = GameObject.Find("/Sounds").GetComponents<AudioSource>();
     }
 

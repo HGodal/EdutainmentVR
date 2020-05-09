@@ -15411,7 +15411,7 @@ MonoBehaviour:
   progressSound: {fileID: 702620367}
   text: {fileID: 468195387}
   score: {fileID: 953420987}
-  conPlacement: {fileID: 1071589298}
+  airconditionInfo: {fileID: 1071589298}
   inConGrab: {fileID: 4941078626185700781, guid: 2fbf0f974b044d94680b3ae31d2bb16a,
     type: 3}
   outConGrab: {fileID: 8610172859525020620, guid: fa2abb99e7390ff40abc935e557b29b0,

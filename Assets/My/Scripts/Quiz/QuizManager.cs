@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using TMPro;
@@ -20,13 +19,13 @@ public class QuizManager : MonoBehaviour
     private int score;
 
     AudioSource[] sounds;
-    
+
     void Start()
     {
         step = -1;
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
         score = 0;
-    
+
         logic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
         teksten = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponent<DisplayText>();
         informationText = allInfo.GetSceneInfoList("quizList");
@@ -43,20 +42,18 @@ public class QuizManager : MonoBehaviour
             logic.WaitChangeScene(5.0f, "TheHub");
         }
     }
-    
-  
+
     public void NextQuestion()
     {
         step++;
         teksten.OverwriteText(informationText.ElementAt(step));
-        step++; 
+        step++;
     }
 
     public void ShowWhy()
     {
         teksten.OverwriteText(informationText.ElementAt(step));
     }
-
 
     public void UserSelectTrue()
     {
@@ -65,7 +62,7 @@ public class QuizManager : MonoBehaviour
             if (i == step)
             {
                 if (informationText.ElementAt(step) == "True")
-                {               
+                {
                     UpdateScore(1);
                     sounds[0].Play();
                 }
@@ -109,5 +106,4 @@ public class QuizManager : MonoBehaviour
         score += value;
         scoreText.text = score.ToString();
     }
-
 }

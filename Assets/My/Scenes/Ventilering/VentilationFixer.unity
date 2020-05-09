@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.49622828, g: 0.8082888, b: 1.0702065, a: 1}
+  m_IndirectSpecularColor: {r: 0.4960667, g: 0.80822796, b: 1.0695754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2135,22 +2135,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a772544fd6c2846ed9e15420d92dfc4e, type: 2}
+      objectReference: {fileID: 2100000, guid: d5ff1998c01cd488aa7036f2da7678c3, type: 2}
     - target: {fileID: 4518406322535419424, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a772544fd6c2846ed9e15420d92dfc4e, type: 2}
+      objectReference: {fileID: 2100000, guid: d5ff1998c01cd488aa7036f2da7678c3, type: 2}
     - target: {fileID: 5091256133691561126, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a772544fd6c2846ed9e15420d92dfc4e, type: 2}
+      objectReference: {fileID: 2100000, guid: d5ff1998c01cd488aa7036f2da7678c3, type: 2}
     - target: {fileID: 7255919642903786171, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a772544fd6c2846ed9e15420d92dfc4e, type: 2}
+      objectReference: {fileID: 2100000, guid: d5ff1998c01cd488aa7036f2da7678c3, type: 2}
     - target: {fileID: 7439718832038273204, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
       propertyPath: m_IsActive
@@ -3534,7 +3534,7 @@ MonoBehaviour:
     poeng for hver del som blir plassert riktig.\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 83a1b0fe6c3dbac44b66f09c82e1d509, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4047,9 +4047,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1408821352}
-  - component: {fileID: 1408821351}
   - component: {fileID: 1408821354}
   - component: {fileID: 1408821353}
+  - component: {fileID: 1408821355}
   m_Layer: 0
   m_Name: CountDown
   m_TagString: Untagged
@@ -4057,23 +4057,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1408821351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408821350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43de17bf97040a34ea1ae024d7b18540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jsonInfo: {fileID: 61406835}
-  countdownText: {fileID: 1518533743}
-  timerDiff: 120
-  countUp: 0
-  isPaused: 0
 --- !u!4 &1408821352
 Transform:
   m_ObjectHideFlags: 0
@@ -4280,6 +4263,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1408821355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408821350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a25c97e9436743598d4674fd8554033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonInfo: {fileID: 61406835}
+  countdownText: {fileID: 1518533743}
+  timerDiff: 90
+  countUp: 0
+  isPaused: 0
 --- !u!1001 &1422799128
 PrefabInstance:
   m_ObjectHideFlags: 0
