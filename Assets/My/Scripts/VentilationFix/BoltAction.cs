@@ -17,14 +17,14 @@ public class BoltAction : MonoBehaviour
     ScoreCounter progress;
     private GameObject skrue0;
 
-    AudioSource audio;
+    AudioSource audioSource;
     public AudioClip drilling;
 
     private void Start()
     {
         sluttvent = GameObject.Find("/VentilLogikk").GetComponent<SluttVent>();
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
         number = 0;   
 
@@ -69,7 +69,7 @@ public class BoltAction : MonoBehaviour
             return;
         }
 
-        audio.PlayOneShot(drilling, 1.0F);
+        audioSource.PlayOneShot(drilling, 1.0F);
         skrue0.transform.Translate(new Vector3(0f, 0f, speed * Time.deltaTime));
         skrue0.transform.Rotate(new Vector3(0f, 0f, 90 * Time.deltaTime));
 
@@ -83,7 +83,7 @@ public class BoltAction : MonoBehaviour
 
         unscrewed = true;
         Destroy(skrue0);
-        audio.Stop();
+        audioSource.Stop();
 
         progress.UpdateScore(1);
         progress.WriteInfoText();
