@@ -7,15 +7,15 @@ public class ScoreView : MonoBehaviour
    
     TextMeshProUGUI scoreText;
     CommonLogic commonLogic;
-    public GenerateJsonInfo allInfo;
+    GenerateJsonInfo allInfo;
 
     Countdown countDownTimer;
 
     private void Start()
     {
+        allInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
         countDownTimer = GameObject.Find("CountDown").GetComponent<Countdown>();
         score = 0;
-        
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
         commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
 
