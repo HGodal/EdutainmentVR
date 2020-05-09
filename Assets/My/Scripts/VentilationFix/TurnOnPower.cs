@@ -48,6 +48,7 @@ public class TurnOnPower : MonoBehaviour
         {
             ebox2.GetComponent<Renderer>().material = green;
             progress.UpdateScore(1);
+            progress.WriteInfoText();
             rod2 = true;
         }
         else

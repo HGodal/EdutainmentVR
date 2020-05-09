@@ -85,7 +85,7 @@ public class BoltAction : MonoBehaviour
         Destroy(skrue0);
         audioSource.Stop();
 
-        progress.UpdateScore(1);
+        progress.UpdateScore(2);
         progress.WriteInfoText();
        
     }

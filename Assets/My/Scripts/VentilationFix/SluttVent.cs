@@ -25,7 +25,7 @@ public class SluttVent : MonoBehaviour
         v.gameObject.AddComponent<Rigidbody>();
         v.gameObject.GetComponent<Rigidbody>().useGravity = true;
 
-        progress.UpdateScore(6);
+        progress.UpdateScore(5);
         progress.WriteInfoText();
 
     }
