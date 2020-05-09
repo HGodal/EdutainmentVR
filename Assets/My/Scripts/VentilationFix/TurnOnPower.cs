@@ -1,10 +1,10 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TurnOnPower : MonoBehaviour
-{ 
-    
+{
+
     public Material red;
     public Material green;
 
@@ -20,14 +20,10 @@ public class TurnOnPower : MonoBehaviour
 
     void Start()
     {
-        progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();   
-        rod = false; 
+        progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
+        rod = false;
         rod2 = false;
         rod3 = false;
-    }
-
-    private void Update() {
-        Debug.Log(rod);
     }
 
     public void TurnOn()
@@ -46,7 +42,7 @@ public class TurnOnPower : MonoBehaviour
         }
     }
 
-      public void TurnOnPower2()
+    public void TurnOnPower2()
     {
         if (rod == true && rod2 == false && rod3 == true)
         {
@@ -60,7 +56,7 @@ public class TurnOnPower : MonoBehaviour
         }
     }
 
-     public void TurnOnPower3()
+    public void TurnOnPower3()
     {
         if (rod == true && rod2 == false && rod3 == false)
         {
