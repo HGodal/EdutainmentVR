@@ -15,7 +15,7 @@ public class CheckValidTools : MonoBehaviour
 
     private void Start()
     {
-        jsonInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
+        jsonInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         displayText = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponents<DisplayText>();
         commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
         countDownTimer = GameObject.Find("/RoomsAndVR/Logic/CountdownLogic").GetComponent<Countdown>();

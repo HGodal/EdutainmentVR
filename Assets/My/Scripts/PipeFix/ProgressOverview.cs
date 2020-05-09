@@ -13,12 +13,12 @@ public class ProgressOverview : MonoBehaviour
 
     private void Start()
     {
-        allInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
         finished = false;
         score = 0;
         victory = GetComponent<AudioSource>();
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
         commonLogic = GameObject.Find("/CommonLogic").GetComponent<CommonLogic>();
+        allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
     }
 
     public void WriteInfoText()

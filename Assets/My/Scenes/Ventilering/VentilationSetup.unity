@@ -1371,7 +1371,7 @@ PrefabInstance:
     - target: {fileID: 903369412275098522, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
       propertyPath: timerDiff
-      value: 30
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 903369412275098522, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}
@@ -3464,7 +3464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ventilasjons r\xF8r"
+  m_text: "Ventilasjonsr\xF8r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 83a1b0fe6c3dbac44b66f09c82e1d509, type: 2}
@@ -3532,10 +3532,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1041772333}
-    characterCount: 16
+    characterCount: 15
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -6558,6 +6558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d4d189d967f4976aece881403cbcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreView: {fileID: 378957435}
 --- !u!82 &1628673865
 AudioSource:
   m_ObjectHideFlags: 0

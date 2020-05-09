@@ -46,7 +46,7 @@ public class SnapZones : MonoBehaviour
     //  Initialize --------------------------------------------------------------------------------
     void Start()
     {
-        jsonInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
+        jsonInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
 
         logic = GameObject.Find("/Logic").GetComponent<CommonLogic>();
 
@@ -348,7 +348,7 @@ public class SnapZones : MonoBehaviour
         tempList.Clear();
         StaticData.levelScores[1] = score;
         infoText.text = jsonInfo.GetSceneInfo("pipeBuilder2");
-        logic.WaitChangeScene(5.0f, "Menu");
+        logic.WaitChangeScene(5.0f, "TheHub");
     }
 
     //  Other Methods --------------------------------------------------------------------------------

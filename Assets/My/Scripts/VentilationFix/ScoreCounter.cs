@@ -13,7 +13,7 @@ public class ScoreCounter : MonoBehaviour
 
     private void Start()
     {
-        allInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
+        allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         finished = false;
         score = 0;
         victory = GetComponent<AudioSource>();

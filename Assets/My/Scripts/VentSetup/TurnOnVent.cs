@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using TMPro;
 
 public class TurnOnVent : MonoBehaviour
 {
     private GameObject hinge;
     private GameObject vent1;
     private GameObject close;
-
+    public ScoreView scoreView;
     ScoreView progress;
     AudioSource ventilation;
 
@@ -23,18 +22,11 @@ public class TurnOnVent : MonoBehaviour
 
     public void TurnOn()
     {
-        Vector3 test = new Vector3(-1.6f, 2.28f, -2.7f);
-        Vector3 test1 = new Vector3(-2.317f, 2.202f, -2.82f);
-        //må sjekke om alt er på riktig plass før ventilasjon kan bli skrudd på
-        if (close.transform.rotation == Quaternion.Euler(0, 90, 0))
+        if (scoreView.GetScore() == 15)
         {
-            if (vent1.transform.position == test1 && hinge.transform.position == test)
-            {
-                    ventilation.Play();
-                    progress.UpdateScore(5);
-                    progress.WriteInfoText(); 
-                    
-            }
+            ventilation.Play();
+            progress.UpdateScore(5);
+            progress.WriteInfoText();
         }
     }
 }

@@ -4,7 +4,7 @@ using TMPro;
 public class ScoreView : MonoBehaviour
 {
     int score;
-   
+
     TextMeshProUGUI scoreText;
     CommonLogic commonLogic;
     GenerateJsonInfo allInfo;
@@ -13,7 +13,7 @@ public class ScoreView : MonoBehaviour
 
     private void Start()
     {
-        allInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
+        allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         countDownTimer = GameObject.Find("CountDown").GetComponent<Countdown>();
         score = 0;
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
@@ -41,9 +41,14 @@ public class ScoreView : MonoBehaviour
         }
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
+
     public void UpdateScore(int value)
     {
-            score += value;
-            scoreText.text = score.ToString();
+        score += value;
+        scoreText.text = score.ToString();
     }
 }
