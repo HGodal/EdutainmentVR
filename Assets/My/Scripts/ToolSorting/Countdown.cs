@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Countdown : MonoBehaviour
 {
@@ -79,9 +80,11 @@ public class Countdown : MonoBehaviour
         {
             isPaused = true;
             coachWhistle.Play();
-            displayText.OverwriteText(jsonInfo.GetSceneInfo("toolSorter3"));
-            //logic.GetComponent<CheckValidTools>().enabled = false;  //  Denne burde ikke vært her
-
+            if (SceneManager.GetActiveScene().name.Equals("VerktoySortering"))
+            {
+                 displayText.OverwriteText(jsonInfo.GetSceneInfo("toolSorter3"));
+                 logic.GetComponent<CheckValidTools>().enabled = false;
+            }
             commonLogic.WaitChangeScene(5.0f, "TheHub");
         }
     }

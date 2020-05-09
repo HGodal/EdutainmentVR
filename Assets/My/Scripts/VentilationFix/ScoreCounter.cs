@@ -9,10 +9,11 @@ public class ScoreCounter : MonoBehaviour
     AudioSource victory;
     TextMeshProUGUI scoreText;
     CommonLogic commonLogic;
-    public GenerateJsonInfo allInfo;
+    GenerateJsonInfo allInfo;
 
     private void Start()
     {
+        allInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
         finished = false;
         score = 0;
         victory = GetComponent<AudioSource>();

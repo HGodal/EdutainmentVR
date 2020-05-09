@@ -5,7 +5,7 @@ using TMPro;
 
 public class QuizManager : MonoBehaviour
 {
-    public GenerateJsonInfo allInfo;
+    GenerateJsonInfo allInfo;
 
     public TextMeshProUGUI questionText;
     TextMeshProUGUI scoreText;
@@ -22,6 +22,7 @@ public class QuizManager : MonoBehaviour
 
     void Start()
     {
+        allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         step = -1;
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
         score = 0;

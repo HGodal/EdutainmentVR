@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CheckValidTools : MonoBehaviour
 {
-    public GenerateJsonInfo jsonInfo;
+    GenerateJsonInfo jsonInfo;
     private DisplayText[] displayText;
     private CommonLogic commonLogic;
     private Countdown countDownTimer;
@@ -15,6 +15,7 @@ public class CheckValidTools : MonoBehaviour
 
     private void Start()
     {
+        jsonInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
         displayText = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponents<DisplayText>();
         commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
         countDownTimer = GameObject.Find("/RoomsAndVR/Logic/CountdownLogic").GetComponent<Countdown>();

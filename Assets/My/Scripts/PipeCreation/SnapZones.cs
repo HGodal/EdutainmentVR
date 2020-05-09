@@ -5,7 +5,7 @@ using TMPro;
 
 public class SnapZones : MonoBehaviour
 {
-    public GenerateJsonInfo jsonInfo;
+    GenerateJsonInfo jsonInfo;
     public TextMeshProUGUI text;
     public TextMeshProUGUI infoText;
 
@@ -46,6 +46,8 @@ public class SnapZones : MonoBehaviour
     //  Initialize --------------------------------------------------------------------------------
     void Start()
     {
+        jsonInfo = GameObject.Find("/JsonInfo").GetComponent<GenerateJsonInfo>();
+
         logic = GameObject.Find("/Logic").GetComponent<CommonLogic>();
 
         parentObject = GameObject.Find("/Pipes").transform;
