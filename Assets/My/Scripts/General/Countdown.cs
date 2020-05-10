@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Countdown : MonoBehaviour
 {
-    public GenerateJsonInfo jsonInfo;
+    GenerateJsonInfo jsonInfo;
     private DisplayText displayText;
 
     public TextMeshProUGUI countdownText;
@@ -26,6 +26,7 @@ public class Countdown : MonoBehaviour
 
     private void Start()
     {
+        jsonInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         displayText = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponent<DisplayText>();
 
         logic = GameObject.Find("/Logic");
