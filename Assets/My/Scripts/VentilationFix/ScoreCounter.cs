@@ -47,6 +47,7 @@ public class ScoreCounter : MonoBehaviour
             StaticData.levelScores[4] = score;
             countDownTimer.isPaused = true;
             commonLogic.WaitChangeScene(5.0f, "TheHub");
+            victory.Play();
         }
     }
 
