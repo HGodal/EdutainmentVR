@@ -10,4 +10,4 @@
 <br/>
 <br/>
 
-This application was created in its entirety by the developers @HGodal and ...
+This application was created in its entirety by the developers [@HGodal](https://github.com/HGodal) and [@Kjetilsvihus](https://github.com/Kjetilsvihus).
