@@ -77,7 +77,8 @@
 		"Finnes det bare luft-til-luft varmepumper, og ikke luft-til-vann?",
 		"False",
 		"Det finnes faktisk 6 forskjellige typer varmepumper idag."
-    ],
-
-	"quiz": "Gratulerer, du har fullført hele quizen! \n\nPoengsummen din kan du se på TV-en til venstre \n\nDu vil bli teleportert tilbake til menyen om 5 sekunder."
+	],
+	
+	"quiz1": "Trykk på 'Neste Spørsmål' for å starte quizen. \n\nDet vil bli gitt 5 poeng for hvert riktig svar.",
+	"quiz2": "Gratulerer, du har fullført hele quizen! \n\nPoengsummen din kan du se på TV-en til venstre \n\nDu vil bli teleportert tilbake til menyen om 5 sekunder."
 }
