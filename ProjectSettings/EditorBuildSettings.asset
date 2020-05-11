@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/My/Scenes/TheHub.unity
+    path: Assets/My/Scenes/Hub/TheHub.unity
     guid: 6e64bbc983ef75e42bad8e54bd72f848
   - enabled: 1
-    path: Assets/My/Scenes/LagreScore.unity
+    path: Assets/My/Scenes/Hub/LagreScore.unity
     guid: be0877c7c0e7730439b46b8d179d6f58
   - enabled: 1
     path: Assets/My/Scenes/Rorlegging/VerktoySortering.unity
