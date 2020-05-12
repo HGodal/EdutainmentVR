@@ -646,7 +646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6d844b14d2c4e6584ef1b4090e45fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonInfo: {fileID: 1335443722}
   text: {fileID: 1861548541}
   infoText: {fileID: 164478480}
   upPipe: {fileID: 6917760890324552441, guid: 7d7b7429d2be2c249b80df1dbe885138, type: 3}
@@ -3333,6 +3332,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.656
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694726356594396836, guid: 90c273db8c6835f499f30feec8432950,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7808976818060481016, guid: 90c273db8c6835f499f30feec8432950,
         type: 3}

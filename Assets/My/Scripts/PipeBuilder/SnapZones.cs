@@ -5,55 +5,39 @@ using TMPro;
 
 public class SnapZones : MonoBehaviour
 {
-    GenerateJsonInfo jsonInfo;
     public TextMeshProUGUI text;
     public TextMeshProUGUI infoText;
-
-    private CommonLogic logic;
-
-    private AudioSource pling;
-
     public GameObject upPipe;
     public GameObject straightPipe;
     public GameObject downPipe;
-
     public float pipeDimension;
 
-    private int zPosition;
-    private int yPosition;
-
-    int goalSpotted;
-
-    private int zTemp;
-    private int yTemp;
-
-    private List<GameObject> pipeList = new List<GameObject>();
-    private List<GameObject> tempList = new List<GameObject>();
-
-    private int angle;
-    private float[] angles = new float[4] { 0f, 90f, 180f, 270f };
-
-    private Transform parentObject;
-
-    private int[,] pipeGrid = new int[10, 6];
-
     int score;
-
     int direction;
     int zDirection;
     int yDirection;
+    int zPosition;
+    int yPosition;
+    int goalSpotted;
+    int zTemp;
+    int yTemp;
+    int angle;
+    int[,] pipeGrid = new int[10, 6];
+    float[] angles = new float[4] { 0f, 90f, 180f, 270f };
+    List<GameObject> pipeList = new List<GameObject>();
+    List<GameObject> tempList = new List<GameObject>();
+    Transform parentObject;
+    GenerateJsonInfo jsonInfo;
+    CommonLogic logic;
+    AudioSource pling;
 
     //  Initialize --------------------------------------------------------------------------------
     void Start()
     {
         jsonInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
-
         logic = GameObject.Find("/Logic").GetComponent<CommonLogic>();
-
         parentObject = GameObject.Find("/Pipes").transform;
-
         pling = GetComponent<AudioSource>();
-
         infoText.text = jsonInfo.GetSceneInfo("pipeBuilder1");
 
         CreateStart();
@@ -83,11 +67,9 @@ public class SnapZones : MonoBehaviour
         pipeList.Clear();
         CreateObstacles();
         CreateAllSnapZones();
-
-        PrintGrid();
     }
 
-    //  Call Class --------------------------------------------------------------------------------
+    //  Methods Called by Placing Pipes ----------------------------------------------------------------
     public void UpTurn()
     {
         ChangeAngle(-1);
@@ -112,8 +94,8 @@ public class SnapZones : MonoBehaviour
         CreateAllSnapZones();
     }
 
-    //  Create Snapzones --------------------------------------------------------------------------------
-    private void CreateAllSnapZones()
+    //  Create New Snapzones --------------------------------------------------------------------------------
+    void CreateAllSnapZones()
     {
         NewLocation(0);
         foreach (GameObject tempPipe in tempList)
@@ -164,7 +146,7 @@ public class SnapZones : MonoBehaviour
         }
     }
 
-    private void CreatePipe(GameObject pipeType, string tag)
+    void CreatePipe(GameObject pipeType, string tag)
     {
         GameObject newPipe = Instantiate(pipeType);
         newPipe.transform.parent = parentObject;
@@ -175,7 +157,7 @@ public class SnapZones : MonoBehaviour
     }
 
     //  Calculate Next Position --------------------------------------------------------------------------------
-    private void UpdateDirection(int retning)
+    void UpdateDirection(int retning)
     {
         retning = Mod(retning, 4);
 
@@ -196,7 +178,7 @@ public class SnapZones : MonoBehaviour
         }
     }
 
-    private bool CheckRoute()
+    bool CheckRoute()
     {
         direction = 0;
         zDirection = 1;
@@ -229,14 +211,14 @@ public class SnapZones : MonoBehaviour
         return (x % m + m) % m;
     }
 
-    private void ChangeAngle(int change)
+    void ChangeAngle(int change)
     {
         angle = Mod(angle + change, 4);
     }
 
-    private void NewLocation(int angleChange)
+    void NewLocation()
     {
-        switch (Mod(angle + angleChange, 4))
+        switch (Mod(angle, 4))
         {
             case 0:
                 zPosition += 1;
@@ -253,7 +235,7 @@ public class SnapZones : MonoBehaviour
         }
     }
 
-    private bool CheckIfNextAvailable(int type)
+    bool CheckIfNextAvailable(int type)
     {
         int tempAngle = Mod(angle + type, 4);
 
@@ -301,7 +283,7 @@ public class SnapZones : MonoBehaviour
     }
 
     //  Create Obstacles --------------------------------------------------------------------------------
-    private void CreateObstacles()
+    void CreateObstacles()
     {
         for (int i = 1; i < pipeGrid.GetLength(0) - 2; i++)
         {
@@ -328,7 +310,7 @@ public class SnapZones : MonoBehaviour
         pipeGrid[9, 2] = 10;
     }
 
-    private void CreatePhysicalObstacles(int zPos, int yPos)
+    void CreatePhysicalObstacles(int zPos, int yPos)
     {
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         cube.transform.parent = parentObject.GetChild(0).transform;
@@ -338,7 +320,7 @@ public class SnapZones : MonoBehaviour
     }
 
     //  Finish Game --------------------------------------------------------------------------------
-    private void GameFinish()
+    void GameFinish()
     {
         pling.Play();
         foreach (GameObject tempPipe in tempList)
@@ -352,7 +334,7 @@ public class SnapZones : MonoBehaviour
     }
 
     //  Other Methods --------------------------------------------------------------------------------
-    private void AddPipeToList(string pipeTag)
+    void AddPipeToList(string pipeTag)
     {
         foreach (GameObject pipe in tempList)
         {
@@ -363,22 +345,8 @@ public class SnapZones : MonoBehaviour
         }
     }
 
-    private void DisplayScore()
+    void DisplayScore()
     {
         text.text = score.ToString();
-    }
-
-    private void PrintGrid()
-    {
-        string logText = "\n";
-        for (int i = pipeGrid.GetLength(1) - 1; i >= 0; i--)
-        {
-            for (int j = 0; j < pipeGrid.GetLength(0); j++)
-            {
-                logText += "[" + pipeGrid[j, i] + "]";
-            }
-            logText += "\n";
-        }
-        Debug.Log(logText);
     }
 }

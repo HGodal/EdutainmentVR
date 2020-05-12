@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CheckValidTools : MonoBehaviour
 {
@@ -8,7 +7,6 @@ public class CheckValidTools : MonoBehaviour
     private CommonLogic commonLogic;
     private Countdown countDownTimer;
     private AudioSource[] sounds;
-
     private int counter;
     private bool isActive;
     public int numOfCorrectItems;
