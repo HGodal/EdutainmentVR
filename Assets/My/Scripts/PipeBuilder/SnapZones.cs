@@ -7,33 +7,10 @@ public class SnapZones : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public TextMeshProUGUI infoText;
-
-    CommonLogic logic;
-
-    AudioSource pling;
-
     public GameObject upPipe;
     public GameObject straightPipe;
     public GameObject downPipe;
     public float pipeDimension;
-
-    int zPosition;
-    int yPosition;
-
-    int goalSpotted;
-
-    int zTemp;
-    int yTemp;
-
-    List<GameObject> pipeList = new List<GameObject>();
-    List<GameObject> tempList = new List<GameObject>();
-
-    int angle;
-    float[] angles = new float[4] { 0f, 90f, 180f, 270f };
-
-    Transform parentObject;
-
-    int[,] pipeGrid = new int[10, 6];
 
     int score;
     int direction;
@@ -49,7 +26,7 @@ public class SnapZones : MonoBehaviour
     float[] angles = new float[4] { 0f, 90f, 180f, 270f };
     List<GameObject> pipeList = new List<GameObject>();
     List<GameObject> tempList = new List<GameObject>();
-    Transform parentObject;
+    Transform pipeContainer;
     GenerateJsonInfo jsonInfo;
     CommonLogic logic;
     AudioSource pling;
@@ -59,7 +36,7 @@ public class SnapZones : MonoBehaviour
     {
         jsonInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         logic = GameObject.Find("/Logic").GetComponent<CommonLogic>();
-        parentObject = GameObject.Find("/Pipes").transform;
+        pipeContainer = GameObject.Find("/Pipes").transform;
         pling = GetComponent<AudioSource>();
         infoText.text = jsonInfo.GetSceneInfo("pipeBuilder1");
 
@@ -78,13 +55,13 @@ public class SnapZones : MonoBehaviour
 
         score = pipeGrid.GetLength(0) * pipeGrid.GetLength(1) + 1;
 
-        for (int i = 1; i < parentObject.childCount; i++)
+        for (int i = 1; i < pipeContainer.childCount; i++)
         {
-            Destroy(parentObject.GetChild(i).gameObject);
+            Destroy(pipeContainer.GetChild(i).gameObject);
         }
-        for (int i = 0; i < parentObject.GetChild(0).childCount; i++)
+        for (int i = 0; i < pipeContainer.GetChild(0).childCount; i++)
         {
-            Destroy(parentObject.GetChild(0).GetChild(i).gameObject);
+            Destroy(pipeContainer.GetChild(0).GetChild(i).gameObject);
         }
         tempList.Clear();
         pipeList.Clear();
@@ -172,7 +149,7 @@ public class SnapZones : MonoBehaviour
     void CreatePipe(GameObject pipeType, string tag)
     {
         GameObject newPipe = Instantiate(pipeType);
-        newPipe.transform.parent = parentObject;
+        newPipe.transform.parent = pipeContainer;
         newPipe.transform.localPosition = new Vector3(0.0f, yPosition * pipeDimension, zPosition * pipeDimension);
         newPipe.transform.localRotation = Quaternion.Euler(angles[angle], 0.0f, 0.0f);
         newPipe.tag = tag;
@@ -336,7 +313,7 @@ public class SnapZones : MonoBehaviour
     void CreatePhysicalObstacles(int zPos, int yPos)
     {
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.transform.parent = parentObject.GetChild(0).transform;
+        cube.transform.parent = pipeContainer.GetChild(0).transform;
         cube.transform.localScale = new Vector3(0.2f, pipeDimension, pipeDimension);
         cube.transform.localPosition = new Vector3(0, yPos * pipeDimension, zPos * pipeDimension);
         cube.GetComponent<Renderer>().material.color = new Color(0.2f, 0.2f, 0.2f);
