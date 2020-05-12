@@ -5,7 +5,6 @@ using TMPro;
 
 public class SnapZones : MonoBehaviour
 {
-    GenerateJsonInfo jsonInfo;
     public TextMeshProUGUI text;
     public TextMeshProUGUI infoText;
 
@@ -16,7 +15,6 @@ public class SnapZones : MonoBehaviour
     public GameObject upPipe;
     public GameObject straightPipe;
     public GameObject downPipe;
-
     public float pipeDimension;
 
     int zPosition;
@@ -38,22 +36,31 @@ public class SnapZones : MonoBehaviour
     int[,] pipeGrid = new int[10, 6];
 
     int score;
-
     int direction;
     int zDirection;
     int yDirection;
+    int zPosition;
+    int yPosition;
+    int goalSpotted;
+    int zTemp;
+    int yTemp;
+    int angle;
+    int[,] pipeGrid = new int[10, 6];
+    float[] angles = new float[4] { 0f, 90f, 180f, 270f };
+    List<GameObject> pipeList = new List<GameObject>();
+    List<GameObject> tempList = new List<GameObject>();
+    Transform parentObject;
+    GenerateJsonInfo jsonInfo;
+    CommonLogic logic;
+    AudioSource pling;
 
     //  Initialize --------------------------------------------------------------------------------
     void Start()
     {
         jsonInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
-
         logic = GameObject.Find("/Logic").GetComponent<CommonLogic>();
-
         parentObject = GameObject.Find("/Pipes").transform;
-
         pling = GetComponent<AudioSource>();
-
         infoText.text = jsonInfo.GetSceneInfo("pipeBuilder1");
 
         CreateStart();
@@ -83,11 +90,9 @@ public class SnapZones : MonoBehaviour
         pipeList.Clear();
         CreateObstacles();
         CreateAllSnapZones();
-
-        PrintGrid();
     }
 
-    //  Call Class --------------------------------------------------------------------------------
+    //  Methods Called by Placing Pipes ----------------------------------------------------------------
     public void UpTurn()
     {
         ChangeAngle(-1);
@@ -115,7 +120,7 @@ public class SnapZones : MonoBehaviour
     //  Create Snapzones --------------------------------------------------------------------------------
     void CreateAllSnapZones()
     {
-        NewLocation(0);
+        NewLocation();
         foreach (GameObject tempPipe in tempList)
         {
             if (!pipeList.Contains(tempPipe))
@@ -234,9 +239,9 @@ public class SnapZones : MonoBehaviour
         angle = Mod(angle + change, 4);
     }
 
-    void NewLocation(int angleChange)
+    void NewLocation()
     {
-        switch (Mod(angle + angleChange, 4))
+        switch (Mod(angle, 4))
         {
             case 0:
                 zPosition += 1;
@@ -366,19 +371,5 @@ public class SnapZones : MonoBehaviour
     void DisplayScore()
     {
         text.text = score.ToString();
-    }
-
-    void PrintGrid()
-    {
-        string logText = "\n";
-        for (int i = pipeGrid.GetLength(1) - 1; i >= 0; i--)
-        {
-            for (int j = 0; j < pipeGrid.GetLength(0); j++)
-            {
-                logText += "[" + pipeGrid[j, i] + "]";
-            }
-            logText += "\n";
-        }
-        Debug.Log(logText);
     }
 }
