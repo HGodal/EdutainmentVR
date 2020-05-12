@@ -26,6 +26,5 @@ public class PuddleLogic : MonoBehaviour
 
         water1.localPosition = new Vector3(sine1, 0, -0.05f);
         water2.localPosition = new Vector3(sine2, 0, 0.05f);
-
     }
 }

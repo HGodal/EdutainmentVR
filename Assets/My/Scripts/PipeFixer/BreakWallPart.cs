@@ -23,7 +23,7 @@ public class BreakWallPart : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Hammer") && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() > 4.0f && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() < 10.0f)
+        if (other.tag.Equals("Hammer") && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() > 3.0f && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() < 10.0f)
         {
             progress.UpdateScore(-1);
             sounds[0].Play();
@@ -48,18 +48,13 @@ public class BreakWallPart : MonoBehaviour
 
         Destroy(gameObject);
 
-        //get explosion position
         Vector3 explosionPos = transform.position;
-        //get colliders in that position and radius
         Collider[] colliders = Physics.OverlapSphere(explosionPos, 2);
-        //add explosion force to all colliders in that overlap sphere
         foreach (Collider hit in colliders)
         {
-            //get rigidbody from collider object
             Rigidbody rb = hit.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                //add explosion force to this body with given parameters
                 rb.AddExplosionForce(3, new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z), 2, 3);
             }
         }
@@ -70,16 +65,13 @@ public class BreakWallPart : MonoBehaviour
         GameObject piece;
         piece = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
-        //tempPart.GetComponent<Renderer>().material.SetColor("_Color", background);
         piece.GetComponent<Renderer>().material.SetColor("_Color", gameObject.GetComponent<Renderer>().material.color);
 
-        //set piece position and scale
         piece.transform.position = transform.position + new Vector3(width * depth, width * y, width * z);
         piece.transform.localScale = new Vector3(0.03f, width, width);
         piece.tag = "Invalid";
         piece.layer = 20;
 
-        //add rigidbody and set mass
         piece.AddComponent<Rigidbody>();
         piece.GetComponent<Rigidbody>().mass = width;
 
