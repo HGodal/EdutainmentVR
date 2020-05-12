@@ -97,7 +97,7 @@ public class SnapZones : MonoBehaviour
     //  Create New Snapzones --------------------------------------------------------------------------------
     void CreateAllSnapZones()
     {
-        NewLocation(0);
+        NewLocation();
         foreach (GameObject tempPipe in tempList)
         {
             if (!pipeList.Contains(tempPipe))
