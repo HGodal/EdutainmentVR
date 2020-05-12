@@ -6,14 +6,14 @@ public class FixPipe : MonoBehaviour
     AudioSource fixSound;
     ProgressOverview progress;
 
-    private void Start()
+    void Start()
     {
         pipeColor = Resources.Load<Material>("PipeColor");
         fixSound = GetComponent<AudioSource>();
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ProgressOverview>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("Pipe"))
         {

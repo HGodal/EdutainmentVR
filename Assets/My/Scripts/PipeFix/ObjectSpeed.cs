@@ -5,12 +5,12 @@ public class ObjectSpeed : MonoBehaviour
     Vector3 currentSpeed;
     Vector3 lastPos;
 
-    private void Start()
+    void Start()
     {
         lastPos = transform.position;
     }
 
-    private void Update()
+    void Update()
     {
         if (lastPos != transform.position)
         {

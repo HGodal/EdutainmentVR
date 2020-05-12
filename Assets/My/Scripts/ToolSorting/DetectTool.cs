@@ -2,19 +2,19 @@
 
 public class DetectTool : MonoBehaviour
 {
-    private CheckValidTools validScript;
+    CheckValidTools validScript;
 
-    private void Start()
+    void Start()
     {
         validScript = GameObject.Find("/Logic").GetComponent<CheckValidTools>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         validScript.Change(other, true);
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         validScript.Change(other, false);
     }

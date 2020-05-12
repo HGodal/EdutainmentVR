@@ -23,7 +23,7 @@ public class GenerateWall : MonoBehaviour
         }
     }
 
-    private GameObject InitWallPart()
+    GameObject InitWallPart()
     {
         GameObject wall = Instantiate(wallPart);
         wall.transform.parent = transform;

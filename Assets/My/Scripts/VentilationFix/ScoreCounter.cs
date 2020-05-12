@@ -12,7 +12,7 @@ public class ScoreCounter : MonoBehaviour
     GenerateJsonInfo allInfo;
     Countdown countDownTimer;
 
-    private void Start()
+    void Start()
     {
         allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         finished = false;

@@ -10,8 +10,8 @@ public class QuizManager : MonoBehaviour
     List<string> informationText;
     DisplayText teksten;
     CommonLogic logic;
-    private int step;
-    private int score;
+    int step;
+    int score;
     AudioSource[] sounds;
     bool waitingForAnswer;
 

@@ -5,13 +5,13 @@ public class DelayedSound : MonoBehaviour
 {
     AudioSource sound;
 
-    private void Start()
+    void Start()
     {
         sound = GetComponent<AudioSource>();
         StartCoroutine(LoopSound());
     }
 
-    private IEnumerator LoopSound()
+    IEnumerator LoopSound()
     {
         while (true)
         {

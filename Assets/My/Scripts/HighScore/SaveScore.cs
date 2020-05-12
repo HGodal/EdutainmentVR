@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SaveScore : MonoBehaviour
 {
-    private string[] hei;
-    private TextMeshProUGUI writtenName;
-    private TextMeshProUGUI currentScore;
-    private string[] listedUser;
+    TextMeshProUGUI writtenName;
+    TextMeshProUGUI currentScore;
+    string[] listedUser;
 
     void Start()
     {

@@ -11,7 +11,7 @@ public class ScoreView : MonoBehaviour
 
     Countdown countDownTimer;
 
-    private void Start()
+    void Start()
     {
         allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         countDownTimer = GameObject.Find("CountDown").GetComponent<Countdown>();

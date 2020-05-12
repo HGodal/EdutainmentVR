@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Countdown : MonoBehaviour
 {
     GenerateJsonInfo jsonInfo;
-    private DisplayText displayText;
+    DisplayText displayText;
 
     public TextMeshProUGUI countdownText;
     public float timerDiff;
@@ -17,14 +17,14 @@ public class Countdown : MonoBehaviour
     string correctTime;
     public bool isPaused = false;
 
-    private CommonLogic commonLogic;
+    CommonLogic commonLogic;
 
     AudioSource tickSound;
     AudioSource coachWhistle;
 
-    private GameObject logic;
+    GameObject logic;
 
-    private void Start()
+    void Start()
     {
         jsonInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         displayText = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponent<DisplayText>();
@@ -46,7 +46,7 @@ public class Countdown : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         if (!isPaused)
         {
@@ -54,7 +54,7 @@ public class Countdown : MonoBehaviour
         }
     }
 
-    private void DoCounting()
+    void DoCounting()
     {
         if (countUp)
         {

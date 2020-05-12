@@ -6,10 +6,10 @@ public class ShowScoreboard : MonoBehaviour
     public TextMeshProUGUI currentScore;
     public GameObject scorePanel;
 
-    private int line;
-    private int row;
+    int line;
+    int row;
 
-    private void Start()
+    void Start()
     {
         ShowCurrentScore();
 
@@ -42,7 +42,7 @@ public class ShowScoreboard : MonoBehaviour
         currentScore.text = StaticData.GetScore().ToString();
     }
 
-    private void CheckValidFormat()
+    void CheckValidFormat()
     {
         if (PlayerPrefs.GetString("HighScore").Equals(""))
         {

@@ -6,7 +6,7 @@ public class CallSnapZones : MonoBehaviour
     SnapZones script;
     GameObject snappedObject;
 
-    private void Start()
+    void Start()
     {
         script = GameObject.Find("/Pipes").GetComponent<SnapZones>();
     }

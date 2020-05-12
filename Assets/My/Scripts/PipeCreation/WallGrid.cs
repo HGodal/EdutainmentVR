@@ -25,7 +25,7 @@ public class WallGrid : MonoBehaviour
         }
     }
 
-    private GameObject CreateDefaultCube()
+    GameObject CreateDefaultCube()
     {
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         cube.transform.parent = GameObject.Find("/Grid").transform;

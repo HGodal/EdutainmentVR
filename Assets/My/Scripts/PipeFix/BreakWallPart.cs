@@ -10,7 +10,7 @@ public class BreakWallPart : MonoBehaviour
     AudioSource[] sounds;
 
 
-    private void Start()
+    void Start()
     {
         smallPieceCount = 3;
         width = gameObject.transform.localScale.z / smallPieceCount;
@@ -21,7 +21,7 @@ public class BreakWallPart : MonoBehaviour
         sounds = GameObject.Find("/Sounds").GetComponents<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("Hammer") && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() > 4.0f && other.gameObject.GetComponent<ObjectSpeed>().getMagnitude() < 10.0f)
         {
@@ -36,7 +36,7 @@ public class BreakWallPart : MonoBehaviour
         }
     }
 
-    private void Explode()
+    void Explode()
     {
         for (int i = 0; i < smallPieceCount; i++)
         {
@@ -65,7 +65,7 @@ public class BreakWallPart : MonoBehaviour
         }
     }
 
-    private void CreateSmallWall(float y, float z)
+    void CreateSmallWall(float y, float z)
     {
         GameObject piece;
         piece = GameObject.CreatePrimitive(PrimitiveType.Cube);

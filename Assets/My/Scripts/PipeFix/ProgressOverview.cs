@@ -11,7 +11,7 @@ public class ProgressOverview : MonoBehaviour
     CommonLogic commonLogic;
     GenerateJsonInfo allInfo;
 
-    private void Awake()
+    void Awake()
     {
         finished = false;
         score = 0;

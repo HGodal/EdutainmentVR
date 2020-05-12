@@ -5,22 +5,22 @@ using VRTK;
 
 public class BoltAction : MonoBehaviour
 {
-    private float speed = 0.02f;
+    float speed = 0.02f;
     float posY = 0f;
 
-    private SluttVent sluttvent;
+    SluttVent sluttvent;
 
     int number;
-    private bool unscrewed = false;
+    bool unscrewed = false;
     public GameObject screwPrefab;
 
     ScoreCounter progress;
-    private GameObject skrue0;
+    GameObject skrue0;
 
     AudioSource audioSource;
     public AudioClip drilling;
 
-    private void Start()
+    void Start()
     {
         sluttvent = GameObject.Find("/VentilLogikk").GetComponent<SluttVent>();
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();

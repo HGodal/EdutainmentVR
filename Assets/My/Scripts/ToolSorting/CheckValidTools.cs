@@ -4,16 +4,16 @@ using UnityEngine;
 public class CheckValidTools : MonoBehaviour
 {
     GenerateJsonInfo jsonInfo;
-    private DisplayText[] displayText;
-    private CommonLogic commonLogic;
-    private Countdown countDownTimer;
-    private AudioSource[] sounds;
+    DisplayText[] displayText;
+    CommonLogic commonLogic;
+    Countdown countDownTimer;
+    AudioSource[] sounds;
 
-    private int counter;
-    private bool isActive;
+    int counter;
+    bool isActive;
     public int numOfCorrectItems;
 
-    private void Start()
+    void Start()
     {
         jsonInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         displayText = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponents<DisplayText>();
@@ -60,7 +60,7 @@ public class CheckValidTools : MonoBehaviour
         }
     }
 
-    private void CheckScore()
+    void CheckScore()
     {
         displayText[1].OverwriteText(counter.ToString());
 

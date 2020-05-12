@@ -9,7 +9,7 @@ public class CreateBrokenPipes : MonoBehaviour
     ProgressOverview progress;
     public GameObject puddle;
 
-    private void Start()
+    void Start()
     {
         pipes = GameObject.Find("/Pipes");
         drippingSounds = GetComponents<AudioSource>();
@@ -19,7 +19,7 @@ public class CreateBrokenPipes : MonoBehaviour
         BreakPipes();
     }
 
-    private void BreakPipes()
+    void BreakPipes()
     {
         foreach (Transform item in pipes.transform)
         {
@@ -40,7 +40,7 @@ public class CreateBrokenPipes : MonoBehaviour
         progress.SetBrokenPipes(numberOfBrokenPipes);
     }
 
-    private void CreateLeakageIndicator(GameObject brokenPipe)
+    void CreateLeakageIndicator(GameObject brokenPipe)
     {
         GameObject newPuddle = Instantiate(puddle);
         newPuddle.transform.parent = brokenPipe.transform;

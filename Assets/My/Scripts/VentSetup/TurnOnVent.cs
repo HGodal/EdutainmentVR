@@ -2,14 +2,14 @@
 
 public class TurnOnVent : MonoBehaviour
 {
-    private GameObject hinge;
-    private GameObject vent1;
-    private GameObject close;
+    GameObject hinge;
+    GameObject vent1;
+    GameObject close;
     public ScoreView scoreView;
     ScoreView progress;
     AudioSource ventilation;
 
-    private void Start()
+    void Start()
     {
         ventilation = GetComponent<AudioSource>();
 

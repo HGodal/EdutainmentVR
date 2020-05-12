@@ -11,7 +11,7 @@ public class CommonLogic : MonoBehaviour
         StartCoroutine(WaitForSeconds(seconds, name));
     }
 
-    private IEnumerator WaitForSeconds(float sec, string name)
+    IEnumerator WaitForSeconds(float sec, string name)
     {
         yield return new WaitForSeconds(sec);
         SceneManager.LoadScene(name, LoadSceneMode.Single);

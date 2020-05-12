@@ -3,7 +3,7 @@ using TMPro;
 
 public class ButtonListener : MonoBehaviour
 {
-    private TextMeshProUGUI nameText;
+    TextMeshProUGUI nameText;
 
     void Start()
     {

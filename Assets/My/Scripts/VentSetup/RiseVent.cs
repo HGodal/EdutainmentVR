@@ -29,7 +29,7 @@ public class RiseVent : MonoBehaviour
         }
     }
 
-    private IEnumerator Rise(Vector3 distance, float duration)
+    IEnumerator Rise(Vector3 distance, float duration)
     {
         raising = true;
         Vector3 startPosition = ventPart.transform.localPosition;

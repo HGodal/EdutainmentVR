@@ -12,9 +12,9 @@ public class TurnOnPower : MonoBehaviour
     public GameObject ebox2;
     public GameObject ebox3;
 
-    private bool rod;
-    private bool rod2;
-    private bool rod3;
+    bool rod;
+    bool rod2;
+    bool rod3;
 
     ScoreCounter progress;
 

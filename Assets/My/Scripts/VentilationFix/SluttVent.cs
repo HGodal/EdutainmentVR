@@ -10,7 +10,7 @@ public class SluttVent : MonoBehaviour
 
     ScoreCounter progress;
     
-    private void Start()
+    void Start()
     {
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
     }

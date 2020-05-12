@@ -3,9 +3,9 @@ using System.Collections;
 
 public class ChangeRotation : MonoBehaviour
 {
-    private GameObject ventPart;
-    private AudioSource correct;
-    private bool rotating;
+    GameObject ventPart;
+    AudioSource correct;
+    bool rotating;
     ScoreView progress;
     bool used;
 
@@ -28,7 +28,7 @@ public class ChangeRotation : MonoBehaviour
         }
     }
 
-    private IEnumerator Rotate(Vector3 angles, float duration)
+    IEnumerator Rotate(Vector3 angles, float duration)
     {
         rotating = true;
         Quaternion startRotation = ventPart.transform.rotation;

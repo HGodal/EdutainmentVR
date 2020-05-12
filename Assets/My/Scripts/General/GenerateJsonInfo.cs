@@ -6,7 +6,7 @@ public class GenerateJsonInfo : MonoBehaviour
     static GenerateJsonInfo instance;
     JsonInfo allInfo;
 
-    private void Awake()
+    void Awake()
     {
         if (instance != null)
         {

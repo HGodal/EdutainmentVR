@@ -4,13 +4,13 @@ using TMPro;
 
 public class CreateAlphabet : MonoBehaviour
 {
-    private GameObject root;
+    GameObject root;
     public Button letterButton;
-    private string alphabet;
-    private int line;
-    private int row;
+    string alphabet;
+    int line;
+    int row;
 
-    private void Start()
+    void Start()
     {
         root = GameObject.Find("/Canvases/KeyboardCanvas/Panel");
         alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ0";
