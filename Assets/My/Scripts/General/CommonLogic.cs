@@ -1,11 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CommonLogic : MonoBehaviour
 {
-
     public void WaitChangeScene(float seconds, string name)
     {
         StartCoroutine(WaitForSeconds(seconds, name));
@@ -21,6 +19,4 @@ public class CommonLogic : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
-
-
 }

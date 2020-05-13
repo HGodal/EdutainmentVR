@@ -4,24 +4,20 @@ using UnityEngine.SceneManagement;
 
 public class Countdown : MonoBehaviour
 {
-    GenerateJsonInfo jsonInfo;
-    DisplayText displayText;
-
     public TextMeshProUGUI countdownText;
     public float timerDiff;
-    float timer;
     public bool countUp = false;
+    public bool isPaused = false;
+    GenerateJsonInfo jsonInfo;
+    DisplayText displayText;
+    float timer;
     float minutes;
     float seconds;
     float oldSeconds;
     string correctTime;
-    public bool isPaused = false;
-
     CommonLogic commonLogic;
-
     AudioSource tickSound;
     AudioSource coachWhistle;
-
     GameObject logic;
 
     void Start()
