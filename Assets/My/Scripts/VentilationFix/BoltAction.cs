@@ -5,22 +5,26 @@ using VRTK;
 
 public class BoltAction : MonoBehaviour
 {
-    private float speed = 0.02f;
+    float speed = 0.02f;
     float posY = 0f;
 
-    private SluttVent sluttvent;
+    SluttVent sluttvent;
 
     int number;
-    private bool unscrewed = true;
+    bool unscrewed = false;
     public GameObject screwPrefab;
 
     ScoreCounter progress;
-    private GameObject skrue0;
+    GameObject skrue0;
 
-    private void Start()
+    AudioSource audioSource;
+    public AudioClip drilling;
+
+    void Start()
     {
         sluttvent = GameObject.Find("/VentilLogikk").GetComponent<SluttVent>();
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
+        audioSource = GetComponent<AudioSource>();
 
         number = 0;   
 
@@ -65,8 +69,10 @@ public class BoltAction : MonoBehaviour
             return;
         }
 
+        audioSource.PlayOneShot(drilling, 1.0F);
         skrue0.transform.Translate(new Vector3(0f, 0f, speed * Time.deltaTime));
         skrue0.transform.Rotate(new Vector3(0f, 0f, 90 * Time.deltaTime));
+
     }
 
     public void Unscrewed()
@@ -77,9 +83,11 @@ public class BoltAction : MonoBehaviour
 
         unscrewed = true;
         Destroy(skrue0);
+        audioSource.Stop();
 
-        progress.UpdateScore(1);
+        progress.UpdateScore(2);
         progress.WriteInfoText();
        
     }
+
 }

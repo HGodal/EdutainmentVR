@@ -3,23 +3,21 @@ using TMPro;
 
 public class ScoreView : MonoBehaviour
 {
-    bool finished;
     int score;
-   
+
     TextMeshProUGUI scoreText;
     CommonLogic commonLogic;
-    public GenerateJsonInfo allInfo;
+    GenerateJsonInfo allInfo;
 
     Countdown countDownTimer;
 
-    private void Start()
+    void Start()
     {
+        allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         countDownTimer = GameObject.Find("CountDown").GetComponent<Countdown>();
-        finished = false;
         score = 0;
-        
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
-        commonLogic = GameObject.Find("/CommonLogic").GetComponent<CommonLogic>();
+        commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
 
         WriteInfoText();
     }
@@ -43,10 +41,14 @@ public class ScoreView : MonoBehaviour
         }
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
 
     public void UpdateScore(int value)
     {
-            score += value;
-            scoreText.text = score.ToString();
+        score += value;
+        scoreText.text = score.ToString();
     }
 }

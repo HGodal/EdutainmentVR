@@ -1,98 +1,70 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using TMPro;
 
 public class QuizManager : MonoBehaviour
 {
-    public GenerateJsonInfo allInfo;
-
-    public TextMeshProUGUI questionText;
+    GenerateJsonInfo allInfo;
     TextMeshProUGUI scoreText;
-
     List<string> informationText;
-
     DisplayText teksten;
     CommonLogic logic;
-
-    private int step;
-    private int score;
-
+    int step;
+    int score;
+    AudioSource[] sounds;
+    bool waitingForAnswer;
 
     void Start()
     {
-        step = -1;
+        allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
-        score = 0;
-    
         logic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
         teksten = GameObject.Find("/RoomsAndVR/Logic/DisplayTextLogic").GetComponent<DisplayText>();
         informationText = allInfo.GetSceneInfoList("quizList");
+
+        step = -3;
+        score = 0;
+
+        sounds = GetComponents<AudioSource>();
+        waitingForAnswer = false;
+        GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("quiz1");
     }
 
-    private void Update()
+    public void UserGuess(bool choice)
     {
-        if (step == 45)
+        if (waitingForAnswer)
         {
-            GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("quiz");
-            StaticData.levelScores[6] = score;
-            logic.WaitChangeScene(5.0f, "TheHub");
+            if (choice == bool.Parse(informationText[step + 1]))
+            {
+                UpdateScore(5);
+                sounds[0].Play();
+            }
+            else
+            {
+                sounds[1].Play();
+            }
+            teksten.OverwriteText(informationText.ElementAt(step + 2));
+            waitingForAnswer = false;
         }
     }
-    
-  
+
     public void NextQuestion()
     {
-        step++;
-        teksten.OverwriteText(informationText.ElementAt(step));
-        step++; 
-    }
-
-    public void ShowWhy()
-    {
-        teksten.OverwriteText(informationText.ElementAt(step));
-    }
-
-
-    public void UserSelectTrue()
-    {
-        for (int i = 1; i < 100; i += 3)
+        if (!waitingForAnswer)
         {
-            if (i == step)
+            step += 3;
+            if (step == informationText.Count)
             {
-                if (informationText.ElementAt(step) == "True")
-                {               
-                    UpdateScore(1);
-                }
-                else
-                {
-                    UpdateScore(0);
-                }
-
-                step++;
-                ShowWhy();
+                GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("quiz2");
+                StaticData.levelScores[6] = score;
+                sounds[2].Play();
+                logic.WaitChangeScene(5.0f, "TheHub");
             }
-        }
-    }
-
-    public void UserSelectFalse()
-    {
-        for (int i = 1; i < 100; i += 3)
-        {
-            if (i == step)
+            else if (step < informationText.Count)
             {
-                if (informationText.ElementAt(step) == "False")
-                {
-                    UpdateScore(1);
-                }
-                else
-                {
-                    UpdateScore(0);
-                }
-
-                step++;
-                ShowWhy();
+                waitingForAnswer = true;
+                teksten.OverwriteText(informationText.ElementAt(step));
             }
         }
     }
@@ -102,5 +74,4 @@ public class QuizManager : MonoBehaviour
         score += value;
         scoreText.text = score.ToString();
     }
-
 }

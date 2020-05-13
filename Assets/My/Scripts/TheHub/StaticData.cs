@@ -3,7 +3,7 @@
 public static class StaticData
 {
     public static int[] levelScores = new int[7];
-    private static int totalScore;
+    static int totalScore;
 
     public static int GetScore()
     {

@@ -9,18 +9,22 @@ public class ScoreCounter : MonoBehaviour
     AudioSource victory;
     TextMeshProUGUI scoreText;
     CommonLogic commonLogic;
-    public GenerateJsonInfo allInfo;
+    GenerateJsonInfo allInfo;
+    Countdown countDownTimer;
 
-    private void Start()
+    void Start()
     {
-        Debug.Log(allInfo.GetSceneInfo("ventFixer1"));
+        allInfo = GameObject.Find("/JsonLogic").GetComponent<GenerateJsonInfo>();
         finished = false;
+        countDownTimer = GameObject.Find("/RoomsAndVR/Logic/CountDown").GetComponent<Countdown>();
         score = 0;
         victory = GetComponent<AudioSource>();
         scoreText = GameObject.Find("/TVset/ScoreCanvas/ScoreCounter").GetComponent<TextMeshProUGUI>();
         commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
 
         WriteInfoText();
+
+        Debug.Log(allInfo.GetSceneInfo("ventFixer2"));
     }
 
     public void WriteInfoText()
@@ -29,12 +33,11 @@ public class ScoreCounter : MonoBehaviour
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventFixer1");
         }
-        else if (score == 3)
+        else if (score >= 3 && score < 5)
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventFixer2");
         }
-        
-        else if (score >= 4 && score < 10)
+        else if (score >= 5 && score < 10)
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventFixer3");
         }
@@ -42,7 +45,9 @@ public class ScoreCounter : MonoBehaviour
         {
             GetComponent<TextMeshProUGUI>().text = allInfo.GetSceneInfo("ventFixer4");
             StaticData.levelScores[4] = score;
+            countDownTimer.isPaused = true;
             commonLogic.WaitChangeScene(5.0f, "TheHub");
+            victory.Play();
         }
     }
 

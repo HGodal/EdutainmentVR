@@ -17,8 +17,8 @@ public class Progress : MonoBehaviour
     GameObject outConSnaps;
     List<string> informationText;
     List<int> segmentScores;
-    private int step;
-    private int openObjects;
+    int step;
+    int openObjects;
     public CommonLogic commonLogic;
 
     void Start()
@@ -57,7 +57,7 @@ public class Progress : MonoBehaviour
         }
     }
 
-    private void UpdateScoreAndInfo(int newScore)
+    void UpdateScoreAndInfo(int newScore)
     {
         progressSound.Play();
 
@@ -88,7 +88,7 @@ public class Progress : MonoBehaviour
         airconditionInfo.OverwriteText(generateJsonInfo.GetSceneInfo("insideVentilationRules"));
     }
 
-    private void CheckAirconditionInside()
+    void CheckAirconditionInside()
     {
         //  Fullfører gjeldende "step"
         foreach (Transform snapZone in inConSnaps.transform)
@@ -105,7 +105,7 @@ public class Progress : MonoBehaviour
         }
     }
 
-    private void CheckAirconditionOutside()
+    void CheckAirconditionOutside()
     {
         //  Fullfører gjeldende "step"
         foreach (Transform snapZone in outConSnaps.transform)

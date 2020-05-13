@@ -1189,7 +1189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38091507fd2444d23a712a1136bd2ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonInfo: {fileID: 612371575}
   numOfCorrectItems: 7
 --- !u!82 &590558292
 AudioSource:

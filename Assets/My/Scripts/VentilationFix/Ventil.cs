@@ -10,7 +10,7 @@ public class Ventil : MonoBehaviour
     ScoreCounter progress;
     public Material red;
 
-private void Start()
+    void Start()
     {
         sluttevent = GameObject.Find("/VentilLogikk").GetComponent<SluttVent>();
         gameObject.AddComponent<Rigidbody>().useGravity = false;
@@ -22,7 +22,7 @@ private void Start()
 
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         //check if the screw is out
         if (other.gameObject.tag == "Screw")
@@ -33,7 +33,7 @@ private void Start()
     }
 
     //makes new vent when player touch with pipewrench
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "PipeWrench")
         {

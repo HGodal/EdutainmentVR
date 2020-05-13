@@ -2,9 +2,9 @@
 
 public class UsageStatus : MonoBehaviour
 {
-    private bool isUsed;
+    bool isUsed;
 
-    private void Start() {
+    void Start() {
         isUsed = false;
     }
 

@@ -6,16 +6,16 @@ public class ShowScoreboard : MonoBehaviour
     public TextMeshProUGUI currentScore;
     public GameObject scorePanel;
 
-    private int line;
-    private int row;
+    int line;
+    int row;
 
-    private void Start()
+    void Start()
     {
         ShowCurrentScore();
 
         CheckValidFormat();
 
-        string[,] scoreTest = ScoreLogic.StringToList(PlayerPrefs.GetString("HighScore"));
+        string[,] score = ScoreLogic.StringToList(PlayerPrefs.GetString("HighScore"));
 
         for (int i = 0; i < 10; i++)
         {
@@ -24,7 +24,7 @@ public class ShowScoreboard : MonoBehaviour
 
             GameObject newPanel = Instantiate(scorePanel);
             newPanel.transform.SetParent(GameObject.Find("/Canvases/HighScoreCanvas/HighScorePanel").transform);
-            newPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i + 1).ToString() + ". " + scoreTest[i, 0] + " " + scoreTest[i, 1];
+            newPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i + 1).ToString() + ". " + score[i, 0] + " " + score[i, 1];
             newPanel.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 
             RectTransform rect = newPanel.GetComponent<RectTransform>();
@@ -42,7 +42,7 @@ public class ShowScoreboard : MonoBehaviour
         currentScore.text = StaticData.GetScore().ToString();
     }
 
-    private void CheckValidFormat()
+    void CheckValidFormat()
     {
         if (PlayerPrefs.GetString("HighScore").Equals(""))
         {
