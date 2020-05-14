@@ -1,15 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SluttVent : MonoBehaviour
 {
-  
     public Transform ventilPrefab;
     public Transform spawnPoint;
-
     ScoreCounter progress;
-    
     void Start()
     {
         progress = GameObject.Find("/InfoCanvas/InfoText").GetComponent<ScoreCounter>();
@@ -27,7 +22,5 @@ public class SluttVent : MonoBehaviour
 
         progress.UpdateScore(5);
         progress.WriteInfoText();
-
     }
 }
-

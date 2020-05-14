@@ -1,21 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TurnOnPower : MonoBehaviour
 {
-
     public Material red;
     public Material green;
-
     public GameObject ebox1;
     public GameObject ebox2;
     public GameObject ebox3;
-
     bool rod;
     bool rod2;
     bool rod3;
-
     ScoreCounter progress;
 
     void Start()
