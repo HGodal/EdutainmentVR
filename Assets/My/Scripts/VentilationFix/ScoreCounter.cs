@@ -5,7 +5,6 @@ public class ScoreCounter : MonoBehaviour
 {
     bool finished;
     int score;
-    
     AudioSource victory;
     TextMeshProUGUI scoreText;
     CommonLogic commonLogic;
@@ -23,8 +22,6 @@ public class ScoreCounter : MonoBehaviour
         commonLogic = GameObject.Find("/RoomsAndVR/Logic/CommonLogic").GetComponent<CommonLogic>();
 
         WriteInfoText();
-
-        Debug.Log(allInfo.GetSceneInfo("ventFixer2"));
     }
 
     public void WriteInfoText()
