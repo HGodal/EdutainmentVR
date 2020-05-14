@@ -40,8 +40,6 @@ public class BoltAction : MonoBehaviour
 
         newScrew.gameObject.AddComponent<BoxCollider>();
         newScrew.gameObject.GetComponent<BoxCollider>().isTrigger = true;
-
-        posY += 0.4f;
     }
 
     public void Screws()
